@@ -216,7 +216,8 @@ Manually : vim /etc/yum.repos.d/local.repo, [name],baseurl=file:///mnt/AppStream
 baseurl=http://GIVEN LINK(if link was given),gpgcheck=0,name='name of your choice',enable=1,
 Createrepo : mkdir -p /home/local_repo, createrepo -d /home/local_repo, dnf config-manager --add-repo file:///mnt/AppStream (if you get files from cd),
 dnf config-manager --add-repo http://GIVEN LINK(if link was given),
-dnf install vsftpd, vim /etc/vsftpd/vsftpd.conf, uncomment anonymous_enable=YES, systemctl restart vsftpd.service, dnf install lftp, lftp localhost""" # Na to dokimasw molis ftiaksw enan ftp server,
+dnf install vsftpd, vim /etc/vsftpd/vsftpd.conf, uncomment anonymous_enable=YES, 
+systemctl restart vsftpd.service, dnf install lftp, lftp localhost""" # Na to dokimasw molis ftiaksw enan ftp server,
 ]
 
 # NEED TO ADD MORE CONTAINER QUESTIONS
