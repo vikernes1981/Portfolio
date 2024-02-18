@@ -110,11 +110,13 @@ Declare the environment variables, HTTPD_USER and HTTPD_PASSWORD and use admin a
 """55) Add 3 users: harry, natasha, tom. The requirements: 
 The Additional group of the two users: harry, Natasha is the admin group. 
 The user: tom’s login shell should be non-interactive.\n""",
+
 """56) Configure your Host Name, IP Address, Gateway and DNS.
 Host name: station.domain40.example.com
 IP Address: 172.24.40.40/24
 Gateway: 172.24.40.1
 DNS/nameserver: 172.24.40.1 \n""",
+
 """57) Create a shared directory, “/home/admins”.
 Make it have the following characteristics:
 (1) “/home/admins” belongs to the group, “adminuser” and this directory can be read and written by members of group “adminuser”
@@ -216,7 +218,8 @@ Manually : vim /etc/yum.repos.d/local.repo, [name],baseurl=file:///mnt/AppStream
 baseurl=http://GIVEN LINK(if link was given),gpgcheck=0,name='name of your choice',enable=1,
 Createrepo : mkdir -p /home/local_repo, createrepo -d /home/local_repo, dnf config-manager --add-repo file:///mnt/AppStream (if you get files from cd),
 dnf config-manager --add-repo http://GIVEN LINK(if link was given),
-dnf install vsftpd, vim /etc/vsftpd/vsftpd.conf, uncomment anonymous_enable=YES, systemctl restart vsftpd.service, dnf install lftp, lftp localhost""" # Na to dokimasw molis ftiaksw enan ftp server,
+dnf install vsftpd, vim /etc/vsftpd/vsftpd.conf, uncomment anonymous_enable=YES, 
+systemctl restart vsftpd.service, dnf install lftp, lftp localhost""" # Na to dokimasw molis ftiaksw enan ftp server,
 ]
 
 # NEED TO ADD MORE CONTAINER QUESTIONS
