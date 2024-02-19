@@ -76,11 +76,11 @@ def display_help():
 
 
 
-def simulate_fdisk_l():
+def simulate_fdisk():
     """
     Simulate the use of fdisk -l to show all physical disks.
     """
-    print("Welcome to fdisk -l (show all physical disks)...\n")
+    print("Welcome to fdisk...\n")
 
     while True:
         user_input = input("Enter command (m for help): ")

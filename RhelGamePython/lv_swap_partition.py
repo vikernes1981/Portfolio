@@ -7,11 +7,11 @@ def lv_swap_partition_creation():
     """
     Create a Logical Volume (LV) for swap partition.
     """
-    correct_command = "lvcreate -L 2G -n swap_partition_name vg_name"
+    correct_command = "lvcreate -L 2G -n swap1 vg1"
     correct_commands = {
-        "mkswap": "mkswap /dev/vg_name/swap_partition_name",
-        "swapon": "swapon /dev/vg_name/swap_partition_name",
-        "swapoff": "swapoff /dev/vg_name/swap_partition_name",
+        "mkswap": "mkswap /dev/vg1/swap1",
+        "swapon": "swapon /dev/vg1/swap1",
+        "swapoff": "swapoff /dev/vg1/swap1",
         "umount": "umount /mnt"
     }
     quit_command = ["quit", "q"]
@@ -31,8 +31,8 @@ def lv_swap_partition_creation():
                 print("Command is correct. Here's information about the command:")
                 print("- 'lvcreate': Command to create a logical volume")
                 print("- '-L 2G': Option to specify the size of the logical volume (2 gigabytes in this case)")
-                print("- '-n swap_partition_name': Option to specify the name of the logical volume (swap_partition_name)")
-                print("- 'vg_name': Name of the volume group to which the logical volume belongs")
+                print("- '-n swap1': Option to specify the name of the logical volume (swap1)")
+                print("- 'vg1': Name of the volume group to which the logical volume belongs")
                 print("\nPurpose:")
                 print("The 'lvcreate' command is used to create a logical volume within a volume group.")
                 print("\nOptions:")
@@ -40,15 +40,15 @@ def lv_swap_partition_creation():
                 print("- '-i, --stripes': Create a striped logical volume")
                 print("- '-I, --stripesize': Specify the stripe size for a striped logical volume")
                 print("\nExamples:")
-                print("lvcreate -L 2G -n swap_partition_name vg_name\t# Create a logical volume named 'swap_partition_name' with size 2GB in volume group 'vg_name'.")
+                print("lvcreate -L 2G -n swap1 vg1\t# Create a logical volume named 'swap1' with size 2GB in volume group 'vg1'.")
                 print("lvcreate -l 100%FREE -n data_lv my_vg\t# Create a logical volume 'data_lv' using all available space in 'my_vg'.")
                 print("\nOutput Example:")
-                print("Logical volume swap_partition_name created.")
+                print("Logical volume swap1 created.")
                 print("\nYou can continue.")
                 break
             else:
                 print("Command is incorrect. Try again.")
-                print("Hint: Use 'lvcreate -L 2G -n swap_partition_name vg_name' to create a swap partition as a logical volume.")
+                print("Hint: Use 'lvcreate -L 2G -n swap1 vg1' to create a swap partition as a logical volume.")
                 continue
 
         while True:
@@ -63,7 +63,7 @@ def lv_swap_partition_creation():
                 print("- '-c, --check': Check the bad blocks before creating the swap area")
                 print("- '-f, --force': Force to create the swap area")
                 print("\nExamples:")
-                print("mkswap /dev/vg_name/swap_partition_name\t# Format the logical volume 'swap_partition_name' as swap.")
+                print("mkswap /dev/vg1/swap1\t# Format the logical volume 'swap1' as swap.")
                 print("\nOutput Example:")
                 print("Setting up swapspace version 1, size = 2097148 KiB")
                 print("no label, UUID=97017f63-6db1-4d47-8f10-418c79126324")
@@ -87,7 +87,7 @@ def lv_swap_partition_creation():
                 print("- '-p, --priority': Set the priority of the swap area")
                 print("- '-e, --early': Enable swap early during boot")
                 print("\nExamples:")
-                print("swapon /dev/vg_name/swap_partition_name\t# Activate the swap partition.")
+                print("swapon /dev/vg1/swap1\t# Activate the swap partition.")
                 print("\nOutput Example:")
                 print("NAME         TYPE      SIZE  USED PRIO")
                 print("/dev/dm-1    partition   2G    0B   -2")
@@ -109,9 +109,9 @@ def lv_swap_partition_creation():
                 print("\nOptions:")
                 print("- '-a, --all': Disable all swap areas.")
                 print("\nExamples:")
-                print("swapoff /dev/vg_name/swap_partition_name\t# Deactivate the swap partition.")
+                print("swapoff /dev/vg1/swap1\t# Deactivate the swap partition.")
                 print("\nOutput Example:")
-                print("Swap partition /dev/vg_name/swap_partition_name was successfully deactivated.")
+                print("Swap partition /dev/vg1/swap1 was successfully deactivated.")
                 print("\nYou can continue.")
                 break
             else:
@@ -120,7 +120,7 @@ def lv_swap_partition_creation():
                 continue
 
         while True:
-            user_command_umount = input("Enter the command to unmount the swap partition: ")
+            user_command_umount = input("Enter the command to unmount a partition: ")
             print("\n")
             if user_command_umount.strip() == correct_commands["umount"]:
                 print("Command is correct.")
@@ -138,7 +138,7 @@ def lv_swap_partition_creation():
                 break
             else:
                 print("Command is incorrect. Try again.")
-                print(f"Hint: Use '{correct_commands['umount']}' to unmount the swap partition.")
+                print(f"Hint: Use '{correct_commands['umount']}' to unmount a partition.")
                 continue  
 
     except KeyboardInterrupt:

@@ -6,7 +6,7 @@ def conclusion():
     Display a narrative conclusion to the Red Hat Odyssey game.
     """
     try:
-        slow_validInput.print_slow("As the final challenge fades into memory, you take a moment to reflect on your journey through the digital expanse.")
+        slow_validInput.print_slow("\n\nAs the final challenge fades into memory, you take a moment to reflect on your journey through the digital expanse.")
         slow_validInput.print_slow("You came, you conquered, and you emerged as a master of Red Hat administration, wielding knowledge and skill like a seasoned cybernaut.")
         slow_validInput.print_slow("Each challenge you faced tested your mettle, pushing you to the brink of your abilities and beyond.")
         slow_validInput.print_slow("But with determination and resolve, you overcame every obstacle in your path, leaving a trail of triumph in your wake.")

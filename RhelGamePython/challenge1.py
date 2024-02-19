@@ -6,7 +6,7 @@ def challenge_1():
     First challenge: Configure Local Storage.
     """
     try:
-        slow_validInput.print_slow("Challenge 1: Configure Local Storage")
+        slow_validInput.print_slow("\n\nChallenge 1: Configure Local Storage\n\n")
         slow_validInput.print_slow("As you traverse the virtual landscape, neon lights flicker, casting an ethereal glow over your surroundings.")
         slow_validInput.print_slow("Your journey leads you to a desolate outpost, a relic of a bygone era, where a solitary terminal awaits.")
         slow_validInput.print_slow("Approaching cautiously, you activate the terminal, and its ancient screen flickers to life, revealing a cryptic message:")
@@ -32,28 +32,32 @@ def challenge_1():
 
             if choice == '1':
                 slow_validInput.print_slow("You initiate the process to list disk space, a crucial step in understanding the resources available in this digital domain.")
-                partitions_filesystem.check_disk_space_command()
+                if partitions_filesystem.check_disk_space_command() == False:
+                    continue
                 slow_validInput.print_slow("Disk space listed successfully!\n")
                 count += 1
                 continue
 
             elif choice == '2':
                 slow_validInput.print_slow("With determination, you delve into the depths of the system, seeking to retrieve the UUIDs of the disks.")
-                partitions_filesystem.check_uuid_command()
+                if partitions_filesystem.check_uuid_command() == False:
+                    continue
                 slow_validInput.print_slow("UUIDs retrieved successfully!\n")
                 count += 1
                 continue
 
             elif choice == '3':
                 slow_validInput.print_slow("You navigate the intricate web of disks and partitions, unraveling their secrets one by one.")
-                partitions_filesystem.check_disks_partitions_command()
+                if partitions_filesystem.check_disks_partitions_command() == False:
+                    continue
                 slow_validInput.print_slow("Disks and partitions listed successfully!\n")
                 count += 1
                 continue
 
             elif choice == '4':
                 slow_validInput.print_slow("With unwavering resolve, you command a forceful partition check, ensuring the stability of the digital landscape.")
-                partitions_filesystem.check_force_partition_check_command()
+                if partitions_filesystem.check_force_partition_check_command() == False:
+                    continue
                 slow_validInput.print_slow("Partition check forced successfully!\n")
                 count += 1
                 continue

@@ -9,23 +9,23 @@ def remove_physical_volume():
     # Define the correct command and hint
     correct_command = "pvremove /dev/sdb1"
     hint = "Hint: Use the 'pvremove' command followed by the device name to remove a physical volume (e.g., pvremove /dev/sdb1)."
-    quit_commands = ["quit", "q"]
+    quit_command = ["quit", "q"]
 
     try:
-        print("\n\nAs you journey deeper into the digital wilderness, you encounter the remnants of an ancient infrastructure,\n\n"
-              "where the essence of data is bound to physical vessels.\n\n"
-              "These vessels, known as physical volumes, serve as the conduits through which raw data flows,\n\n"
-              "each bearing the weight of countless digital experiences.\n\n"
-              "In your quest to reshape the digital landscape, you must learn to wield the power to unbind these vessels,\n\n"
-              "freeing the data within to seek new paths and purpose.\n\n"
-              "The voice of the elders echoes in your mind, guiding your hand as you prepare to undertake this sacred task.\n\n")
+        print("\n\nAs you journey deeper into the digital wilderness, you encounter the remnants of an ancient infrastructure,"
+              "where the essence of data is bound to physical vessels."
+              "These vessels, known as physical volumes, serve as the conduits through which raw data flows,"
+              "each bearing the weight of countless digital experiences."
+              "In your quest to reshape the digital landscape, you must learn to wield the power to unbind these vessels,"
+              "freeing the data within to seek new paths and purpose."
+              "The voice of the elders echoes in your mind, guiding your hand as you prepare to undertake this sacred task.\n")
         
         while True:
             # Prompt the user for input
             user_input = input("Enter the command to remove a physical volume or type 'quit/q' to exit: ")
 
-            # Check if the input matches the quit command
-            if user_input.strip() == quit_command:
+            # Check if the input matches any of the quit commands
+            if user_input.strip() in quit_command:
                 print("Exiting the program. Goodbye!")
                 return False
 
@@ -68,23 +68,23 @@ def create_physical_volume():
     # Define the correct command and hint
     correct_command = "pvcreate /dev/sdb1"
     hint = "Hint: Use the 'pvcreate' command followed by the device name to create a physical volume (e.g., pvcreate /dev/sdb1)."
-    quit_commands = ["quit", "q"]
+    quit_command = ["quit", "q"]
 
     try:
-        print("\n\nAs you journey deeper into the digital wilderness, you encounter a realm where the fabric of reality is\n\n"
-              "woven from the essence of raw data.\n\n"
-              "In this ethereal domain, the seeds of creation are sown through the act of transformation – the forging\n\n"
-              "of physical volumes that serve as the building blocks of digital landscapes.\n\n"
-              "With each command uttered, you shape the destiny of this realm, imbuing it with the potential to host\n\n"
-              "countless experiences and narratives.\n\n")
+        print("\n\nAs you journey deeper into the digital wilderness, you encounter a realm where the fabric of reality is"
+              "woven from the essence of raw data."
+              "In this ethereal domain, the seeds of creation are sown through the act of transformation – the forging"
+              "of physical volumes that serve as the building blocks of digital landscapes."
+              "With each command uttered, you shape the destiny of this realm, imbuing it with the potential to host"
+              "countless experiences and narratives.\n")
         
         while True:
             # Prompt the user for input
             user_input = input("Enter the command to create a physical volume or type 'quit/q' to exit: ")
 
-            # Check if the input matches the quit command
-            if user_input.strip() == quit_command:
-                print("Exiting the task. Farewell!")
+            # Check if the input matches any of the quit commands
+            if user_input.strip() in quit_command:
+                print("Exiting the program. Goodbye!")
                 return False
 
             # Check if the input matches the correct command
@@ -125,23 +125,23 @@ def view_physical_volumes():
     # Define the correct command and hint
     correct_command = "pvdisplay"
     hint = "Hint: Use the 'pvdisplay' command to view physical volumes."
-    quit_commands = ["quit", "q"]
+    quit_command = ["quit", "q"]
 
     try:
-        print("\n\nAs you traverse the vast expanse of the digital realm, you come upon a repository of knowledge hidden\n\n"
-              "beneath layers of code and data.\n\n"
-              "In this sacred archive, the essence of creation is laid bare, manifested in the form of physical volumes\n\n"
-              "that serve as the bedrock of digital existence.\n\n"
-              "Through the lens of perception, you peer into the depths of this repository, seeking to unravel the\n\n"
-              "mysteries that lie within.\n\n")
+        print("\n\nAs you traverse the vast expanse of the digital realm, you come upon a repository of knowledge hidden"
+              "beneath layers of code and data."
+              "In this sacred archive, the essence of creation is laid bare, manifested in the form of physical volumes"
+              "that serve as the bedrock of digital existence."
+              "Through the lens of perception, you peer into the depths of this repository, seeking to unravel the"
+              "mysteries that lie within.\n")
         
         while True:
             # Prompt the user for input
             user_input = input("Enter the command to view physical volumes or type 'quit/q' to exit: ")
 
-            # Check if the input matches the quit command
-            if user_input.strip() == quit_command:
-                print("Exiting the task. Farewell!")
+            # Check if the input matches any of the quit commands
+            if user_input.strip() in quit_command:
+                print("Exiting the program. Goodbye!")
                 return False
 
             # Check if the input matches the correct command
