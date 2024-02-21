@@ -1,6 +1,3 @@
-
-### LV SWAP PARTITION ###
-
 import slow_validInput
 
 def lv_swap_partition_creation():
@@ -25,9 +22,12 @@ def lv_swap_partition_creation():
         slow_validInput.print_slow("This ethereal construct, forged from the fabric of the digital realm, is said to enhance the performance and stability of systems, serving as a conduit for the flow of virtual memory.\n")
         
         while True:
-            user_command_lvcreate = input("Enter the command to create a swap partition as a logical volume: ")
+            user_command_lvcreate = input("Enter the command to create a swap partition as a logical volume ('quit' or 'q' to exit): ")
             print("\n")
-            if user_command_lvcreate.strip() == correct_command:
+            if user_command_lvcreate.strip() in quit_command:
+                print("Exiting the task as per user request. Farewell!")
+                return False
+            elif user_command_lvcreate.strip() == correct_command:
                 print("Command is correct. Here's information about the command:")
                 print("- 'lvcreate': Command to create a logical volume")
                 print("- '-L 2G': Option to specify the size of the logical volume (2 gigabytes in this case)")
@@ -52,9 +52,12 @@ def lv_swap_partition_creation():
                 continue
 
         while True:
-            user_command_mkswap = input("Enter the command to format the logical volume as swap: ")
+            user_command_mkswap = input("Enter the command to format the logical volume as swap ('quit' or 'q' to exit): ")
             print("\n")
-            if user_command_mkswap.strip() == correct_commands["mkswap"]:
+            if user_command_mkswap.strip() in quit_command:
+                print("Exiting the task as per user request. Farewell!")
+                return False
+            elif user_command_mkswap.strip() == correct_commands["mkswap"]:
                 print("Command is correct.")
                 print("mkswap command formats the logical volume as swap.")
                 print("\nPurpose:")
@@ -75,9 +78,12 @@ def lv_swap_partition_creation():
                 continue
 
         while True:
-            user_command_swapon = input("Enter the command to activate the swap partition: ")
+            user_command_swapon = input("Enter the command to activate the swap partition ('quit' or 'q' to exit): ")
             print("\n")
-            if user_command_swapon.strip() == correct_commands["swapon"]:
+            if user_command_swapon.strip() in quit_command:
+                print("Exiting the task as per user request. Farewell!")
+                return False
+            elif user_command_swapon.strip() == correct_commands["swapon"]:
                 print("Command is correct.")
                 print("swapon command activates the swap partition.")
                 print("\nPurpose:")
@@ -99,9 +105,12 @@ def lv_swap_partition_creation():
                 continue
 
         while True:
-            user_command_swapoff = input("Enter the command to deactivate the swap partition: ")
+            user_command_swapoff = input("Enter the command to deactivate the swap partition ('quit' or 'q' to exit): ")
             print("\n")
-            if user_command_swapoff.strip() == correct_commands["swapoff"]:
+            if user_command_swapoff.strip() in quit_command:
+                print("Exiting the task as per user request. Farewell!")
+                return False
+            elif user_command_swapoff.strip() == correct_commands["swapoff"]:
                 print("Command is correct.")
                 print("swapoff command deactivates the swap partition.")
                 print("\nPurpose:")
@@ -120,9 +129,12 @@ def lv_swap_partition_creation():
                 continue
 
         while True:
-            user_command_umount = input("Enter the command to unmount a partition: ")
+            user_command_umount = input("Enter the command to unmount a partition ('quit' or 'q' to exit): ")
             print("\n")
-            if user_command_umount.strip() == correct_commands["umount"]:
+            if user_command_umount.strip() in quit_command:
+                print("Exiting the task as per user request. Farewell!")
+                return False
+            elif user_command_umount.strip() == correct_commands["umount"]:
                 print("Command is correct.")
                 print("umount command unmounts the swap partition.")
                 print("\nPurpose:")
@@ -138,8 +150,8 @@ def lv_swap_partition_creation():
                 break
             else:
                 print("Command is incorrect. Try again.")
-                print(f"Hint: Use '{correct_commands['umount']}' to unmount a partition.")
-                continue  
+                print(f"Hint: Use '{correct_command}' to create a swap partition as a logical volume (LV).")
+                continue 
 
     except KeyboardInterrupt:
         print("\nExiting the task due to user interruption (Ctrl+C). Farewell!")
@@ -148,4 +160,61 @@ def lv_swap_partition_creation():
         print("An error occurred during LV swap partition creation:", e)
         return False
 
+def provide_swap_label_line():
+    """
+    Prompt the user to provide a line with the swap label.
+    Check if the provided line is correct.
+    If correct, inform the user that the line is valid.
+    If false, provide a hint and ask the user to try again.
+    """
+    correct_swap_label = "swaplabel"
+    correct_swap_uuid = "966cd40a-0aab-464b-b930-7909fefea8db"
+    correct_line = [f'LABEL={correct_swap_label} swap swap defaults 0 0', f'UUID={correct_swap_uuid} swap swap defaults 0 0']
+    hint = f"Hint: Use 'LABEL={correct_swap_label} swap swap defaults 0 0' to provide the swap label line or\nUUID={correct_swap_uuid} swap swap defaults 0 0"
+    quit_commands = ["quit", "q"]
 
+    try:
+        print("\n\nAs you traverse the digital landscape, you come across a hidden realm known as the Swap Dimension."
+              "Here, memories are stored and retrieved in the blink of an eye, facilitating the flow of data across dimensions."
+              "In this realm, you discover the essence of your journey - the sacred Swap Label."
+              "With determination in your heart, you step forth, ready to uncover its mysteries.\n\n"
+              f"Your quest begins with the discovery of the following :\nSwap Label: {correct_swap_label}\nUUID: {correct_swap_uuid}")
+
+        while True:
+            user_line = input("Enter the line with the Swap Label or UUID (type 'quit' or 'q' to exit): ").strip()
+            print("\n")
+            if not user_line:
+                print(hint)
+                print("No input provided. Please try again.")
+                continue
+
+            if user_line in quit_commands:
+                print("Exiting the task. Farewell!")
+                return False
+
+            if user_line in correct_line:
+                if 'swaplabel' in user_line:
+                    print("Line is correct. Swap label line provided successfully.")
+                    print("Example:")
+                    print(f"LABEL={correct_swap_label} swap swap defaults 0 0")
+                    return True
+                else:
+                    print("Line is correct. UUID line provided successfully.")
+                    print("Example:")
+                    print(f"UUID={correct_swap_uuid} swap swap defaults 0 0")
+                    return True
+            else:
+                print("Line is incorrect. Try again.")
+                print(hint)
+                print("Example: " + correct_line[0])
+                print("Note: The 'swap' type indicates that this partition is intended for swap space.")
+                print("Options: Additional options can be specified for swapping.")
+                print("         'defaults' typically includes options for standard settings.")
+                print("         '0 0' specifies filesystem check and order of dumping.")
+                continue
+    except KeyboardInterrupt:
+        print("\nExiting the program due to user interruption (Ctrl+C). Farewell!")
+        return False
+    except Exception as e:
+        print("An error occurred:", e)
+        return False

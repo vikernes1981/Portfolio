@@ -49,20 +49,7 @@ def provide_uuid_line():
     except Exception as e:
         print("An error occurred:", e)
         return False
-
-
-
-
-
-
-
-
-# NA TO FTIAKSW ,TELEIWS LATHOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-
-
-
-
-
+        
 
 
 def edit_fstab():

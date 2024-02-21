@@ -136,6 +136,6 @@ def delete_partition_guide():
     print("As you navigate the intricacies of partition management, each deletion brings clarity to the digital landscape.")
     print("May your actions pave the way for new beginnings in the realm of storage.\n")
 
-print("\n\nAs you traverse the digital realm, you encounter numerous obstacles, each requiring mastery over fdisk.")
-print("Fear not, for I shall guide you through the arcane rituals of partition creation and destruction.\n")
+    print("\n\nAs you traverse the digital realm, you encounter numerous obstacles, each requiring mastery over fdisk.")
+    print("Fear not, for I shall guide you through the arcane rituals of partition creation and destruction.\n")
 
