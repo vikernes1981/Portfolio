@@ -181,3 +181,98 @@ def create_vdo():
         slow_validInput.print_slow("An error occurred:", e)
         return False
 
+
+def manage_and_create_stratis_pool_fs():
+    """
+    Function to manage and create Stratis pool and filesystem.
+    """
+    try:
+        slow_validInput.print_slow("\n\nManaging and Creating Stratis Pool and Filesystem:\n\n")
+        slow_validInput.print_slow("Welcome to the Stratis pool and filesystem management process.")
+        slow_validInput.print_slow("Stratis provides advanced storage management capabilities for Linux systems.\n")
+        slow_validInput.print_slow("As you embark on this journey, you will create a Stratis pool, add data to it,")
+        slow_validInput.print_slow("create a filesystem within the pool, list available pools and filesystems,")
+        slow_validInput.print_slow("and finally destroy the pool and filesystem if needed.\n")
+        slow_validInput.print_slow("Let's begin managing and creating the Stratis pool and filesystem:\n")
+        slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
+
+        correct_commands = [
+            "stratis pool create mypool /dev/sda",  # Creates a Stratis pool named 'mypool' using /dev/sda
+            "stratis pool add-data mypool /dev/sdb",  # Adds additional data device (/dev/sdb) to the 'mypool' pool
+            "stratis fs create mypool myfs",  # Creates a Stratis filesystem named 'myfs' within the 'mypool' pool
+            "stratis fs snapshot mypool myfs",  # Creates a snapshot of the 'myfs' filesystem in the 'mypool' pool
+            "stratis fs list mypool",  # Lists Stratis filesystems within the specified pool
+            "stratis pool list",  # Lists available Stratis pools
+            "stratis fs destroy mypool myfs",  # Destroys the specified Stratis filesystem 'myfs' in the 'mypool' pool
+            "stratis pool destroy mypool"  # Destroys the specified Stratis pool 'mypool'
+        ]
+
+        quit_commands = ["quit", "q"]
+        index = 0
+        slow_validInput.print_slow("There are 8 commands you must give in the correct order!")
+        while index < len(correct_commands):
+            user_command = input(f"Enter the command: '{correct_commands[index]}' (type 'quit' or 'q' to exit): ")
+            if user_command.strip().lower() in quit_commands:
+                slow_validInput.print_slow("Exiting the process. Farewell!")
+                return False
+
+            if user_command.strip() == correct_commands[index]:
+                slow_validInput.print_slow("Executing the command...")
+                # Here you can execute the command using subprocess or other methods
+                slow_validInput.print_slow(f"Command '{correct_commands[index]}' executed successfully!\n")
+                # slow_validInput.print_slow explanations for each command
+                explanations = [
+                    "Creates a Stratis pool named 'mypool' using /dev/sda.",
+                    "Adds additional data device (/dev/sdb) to the 'mypool' pool.",
+                    "Creates a Stratis filesystem named 'myfs' within the 'mypool' pool.",
+                    "Creates a snapshot of the 'myfs' filesystem in the 'mypool' pool.",
+                    "Lists Stratis filesystems within the specified pool.",
+                    "Lists available Stratis pools.",
+                    "Destroys the specified Stratis filesystem 'myfs' in the 'mypool' pool.",
+                    "Destroys the specified Stratis pool 'mypool'.",
+                ]
+                slow_validInput.print_slow(f"Explanation: {explanations[index]}\n")
+                # Output examples for each command
+                if index == 0:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Created Stratis pool 'mypool' using /dev/sda")
+                elif index == 1:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Added data device /dev/sdb to Stratis pool 'mypool'")
+                elif index == 2:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Created Stratis filesystem 'myfs' within pool 'mypool'")
+                elif index == 3:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Created snapshot of filesystem 'myfs' within pool 'mypool'")
+                elif index == 4:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Available filesystems in pool 'mypool':\n"
+                                               "  - myfs\n"
+                                               "  - otherfs")
+                elif index == 5:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Available Stratis pools:\n"
+                                               "  - mypool\n"
+                                               "  - otherpool")
+                elif index == 6:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Destroyed filesystem 'myfs' in pool 'mypool'")
+                elif index == 7:
+                    slow_validInput.print_slow("Output Example:")
+                    slow_validInput.print_slow("  Destroyed Stratis pool 'mypool'")
+                index += 1
+            else:
+                slow_validInput.print_slow("Incorrect command. Try again.")
+                slow_validInput.print_slow(f"Hint: Use '{correct_commands[index]}' to proceed.")
+                continue
+
+        slow_validInput.print_slow("Stratis pool and filesystem management completed successfully!\n")
+        return True
+
+    except KeyboardInterrupt:
+        slow_validInput.print_slow("\nExiting the process due to user interruption (Ctrl+C). Farewell!")
+        return False
+    except Exception as e:
+        slow_validInput.print_slow("An error occurred:", e)
+        return False

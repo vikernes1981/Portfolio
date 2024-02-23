@@ -1,5 +1,5 @@
 import slow_validInput
-import fstab_vdo
+import fstab_vdo_stratis
 import vdo_admin
 from create_fs import create_vdo
 
@@ -104,6 +104,4 @@ def configure_vdo():
     except Exception as e:
         print("An error occurred:", e)
 
-# Call the function to start the VDO configuration challenge
-configure_vdo()
 
