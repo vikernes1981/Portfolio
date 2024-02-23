@@ -1,11 +1,8 @@
 import slow_validInput
-import install_vdo
-import create_vdo
-import expand_vdo
-import remove_vdo
-import list_vdo
 import fstab_vdo
-import write_modes_vdo
+import vdo_admin
+from create_fs import create_vdo
+
 
 def configure_vdo():
     """
@@ -42,7 +39,7 @@ def configure_vdo():
 
             if choice == '1':
                 slow_validInput.print_slow("With unwavering resolve, you install VDO, optimizing the digital landscape for maximum efficiency.")
-                if install_vdo.install_vdo() == False:
+                if vdo_admin.install_vdo() == False:
                     continue
                 slow_validInput.print_slow("VDO installed successfully!\n")
                 count += 1
@@ -51,7 +48,7 @@ def configure_vdo():
             elif choice == '2':
                 slow_validInput.print_slow("You choose to create a new VDO volume, shaping the digital landscape with efficiency and precision.")
                  
-                if create_vdo.create_vdo() == False:
+                if create_vdo() == False:
                     continue
                 slow_validInput.print_slow("VDO volume created successfully!\n")
                 count += 1
@@ -60,7 +57,7 @@ def configure_vdo():
             elif choice == '3':
                 slow_validInput.print_slow("You choose to expand the existing VDO volume, unlocking additional storage capacity.")
 
-                if expand_vdo.expand_vdo() == False:
+                if vdo_admin.expand_vdo() == False:
                     continue
                 slow_validInput.print_slow("VDO volume expanded successfully!\n")
                 count += 1
@@ -69,7 +66,7 @@ def configure_vdo():
             elif choice == '4':
                 slow_validInput.print_slow("With careful consideration, you opt to remove the VDO volume, restoring the digital landscape to its original state.")
                 
-                if remove_vdo.remove_vdo() == False:
+                if vdo_admin.remove_vdo() == False:
                     continue
                 slow_validInput.print_slow("VDO volume removed successfully!\n")
                 count += 1
@@ -78,7 +75,7 @@ def configure_vdo():
             elif choice == '5':
                 slow_validInput.print_slow("You decide to list all VDO volumes, gaining insight into their configurations and capacities.")
                 
-                if list_vdo.list_vdo_volumes() == False:
+                if vdo_admin.list_vdo() == False:
                     continue
                 slow_validInput.print_slow("VDO volumes listed successfully!\n")
                 count += 1
@@ -94,7 +91,7 @@ def configure_vdo():
 
             elif choice == '7':
                 slow_validInput.print_slow("You seek information about VDO write modes, exploring the various options available.")
-                if write_modes_vdo.vdo_write_modes_info() == False:
+                if vdo_admin.vdo_write_modes() == False:
                     continue
                 slow_validInput.print_slow("VDO write modes info displayed successfully!\n")
                 count += 1

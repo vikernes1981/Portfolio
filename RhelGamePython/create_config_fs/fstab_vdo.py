@@ -32,6 +32,7 @@ def add_vdo_fstab():
                 return True
             else:
                 slow_validInput.print_slow("Incorrect command. Please try again or type 'quit' to exit.")
+                # ADD HINT
                 continue
     except KeyboardInterrupt:
         slow_validInput.print_slow("\nExiting the program due to user interruption (Ctrl+C). Goodbye!")
