@@ -5,12 +5,13 @@ def vdo_write_modes():
     Function to provide information about VDO write modes.
     """
     try:
-        slow_validInput.print_slow("\n\nAs you delve deeper into the intricacies of VDO (Virtual Data Optimizer),")
-        slow_validInput.print_slow("you encounter the essence of data persistence: write modes.")
-        slow_validInput.print_slow("In the realm of VDO, three distinct write modes dictate the behavior of data writes,")
-        slow_validInput.print_slow("each offering its own balance between performance and data integrity.\n")
-        slow_validInput.print_slow("Choose wisely, for the chosen write mode will shape the destiny of your data.\n")
-
+        slow_validInput.print_slow("Upon landing on VDO-351-xy, you are tasked with optimizing the VDO write modes for maximum performance.")
+        slow_validInput.print_slow("The VDO write modes determine how data is written to the underlying storage, balancing performance and data integrity.\n")
+        slow_validInput.print_slow("You analyze the workload characteristics and system requirements to choose the appropriate write modes.")
+        slow_validInput.print_slow("For high-performance applications, you opt for write-through mode to ensure minimal latency and maximum throughput.\n")
+        slow_validInput.print_slow("For data-intensive tasks requiring data integrity guarantees, you select write-around mode to bypass caching for critical writes.")
+        slow_validInput.print_slow("This ensures that important data is written directly to storage without impacting performance.\n")
+        
         slow_validInput.print_slow("VDO Write Modes:")
         slow_validInput.print_slow("1. Sync Mode:")
         slow_validInput.print_slow("   - In sync mode, writes to the VDO device are acknowledged only when the underlying storage")
@@ -34,10 +35,13 @@ def remove_vdo():
     Function to remove a VDO (Virtual Data Optimizer) volume.
     """
     try:
-        slow_validInput.print_slow("As you delve deeper into the realm of data management, you encounter a VDO volume,")
-        slow_validInput.print_slow("its digital presence whispering of past endeavors and future possibilities.")
-        slow_validInput.print_slow("To continue your journey unencumbered, you must remove this volume,")
-        slow_validInput.print_slow("returning its resources to the void from whence they came.\n")
+        slow_validInput.print_slow("Upon landing on VDO-351-xy, you review the existing VDO volumes to optimize resource allocation.")
+        slow_validInput.print_slow("During the analysis, you identify obsolete volumes that are no longer needed for data storage.\n")
+        slow_validInput.print_slow("With precision and caution, you initiate the removal process for the obsolete VDO volumes.")
+        slow_validInput.print_slow("Each volume is carefully decommissioned, ensuring that data is migrated or backed up to prevent loss.\n")
+        slow_validInput.print_slow("As the removal process progresses, you encounter challenges such as data integrity checks and system dependencies.")
+        slow_validInput.print_slow("But with your expertise and meticulous approach, you overcome each obstacle with ease.\n")
+        
         slow_validInput.print_slow("Remember, you can exit at any time by typing 'quit' or 'q'.\n")
 
         while True:
@@ -73,12 +77,13 @@ def list_vdo():
     Function to list VDO (Virtual Data Optimizer) volumes.
     """
     try:
-        slow_validInput.print_slow("\n\nAs you traverse the digital landscape, you encounter the vast expanse of virtual storage entities,")
-        slow_validInput.print_slow("each bearing the mark of the Virtual Data Optimizer (VDO). Their presence, though intangible,")
-        slow_validInput.print_slow("shapes the very fabric of the digital realm, optimizing efficiency and maximizing resources.")
-        slow_validInput.print_slow("Your mission now is to unveil these hidden volumes, revealing their configurations and capacities.\n")
-        slow_validInput.print_slow("Choose wisely as you navigate the depths of the VDO realm, for each command holds the key")
-        slow_validInput.print_slow("to unlocking the mysteries of virtual storage.\n")
+        slow_validInput.print_slow("List VDO volumes.")
+        slow_validInput.print_slow("Upon landing on VDO-351-xy, you access the planet's data management interface to view the existing VDO volumes.")
+        slow_validInput.print_slow("The interface displays a comprehensive list of volumes, each with its unique identifier, capacity, and status.\n")
+        slow_validInput.print_slow("You review the list, analyzing the characteristics of each volume to gain insights into the planet's data infrastructure.")
+        slow_validInput.print_slow("Some volumes are dedicated to critical system operations, while others serve as repositories for user data and applications.\n")
+        slow_validInput.print_slow("As you delve deeper into the list, you uncover valuable information about the planet's data optimization strategies and resource utilization.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -118,11 +123,14 @@ def install_vdo():
     """
     try:
         slow_validInput.print_slow("\n\nInstall VDO and kmod-kvdo:\n\n")
-        slow_validInput.print_slow("As you embark on your journey through the digital realm, you come across a mystical gateway.")
-        slow_validInput.print_slow("This gateway promises access to untold powers, hidden within the enigmatic depths of the virtual cosmos.")
-        slow_validInput.print_slow("Whispers of ancient knowledge guide your steps as you approach, revealing the secrets of VDO - the Virtual Data Optimizer.\n")
-        slow_validInput.print_slow("With VDO, you can unlock the full potential of your storage, compressing data with unparalleled efficiency.")
-        slow_validInput.print_slow("But first, you must install VDO and its companion, kmod-kvdo, by uttering the sacred command.\n")
+        slow_validInput.print_slow("Upon landing on VDO-351-xy, you are greeted by a bustling hub of cybernetic activity.")
+        slow_validInput.print_slow("Engineers and technicians work tirelessly to maintain and expand the planet's vast network of VDO systems.")
+        slow_validInput.print_slow("Your mission here is to install new VDO systems and integrate them seamlessly into the existing infrastructure.\n")
+        slow_validInput.print_slow("You begin by selecting optimal locations for the new VDO installations, considering factors such as data accessibility and network connectivity.")
+        slow_validInput.print_slow("Once the locations are chosen, you deploy specialized drones to assemble and configure the VDO hardware.\n")
+        slow_validInput.print_slow("As the installations progress, you encounter challenges such as power fluctuations and compatibility issues.")
+        slow_validInput.print_slow("But with your expertise and problem-solving skills, you overcome each obstacle with ease.\n")
+        
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 
         correct_command = "dnf install -y vdo kmod-kvdo"
@@ -161,10 +169,13 @@ def expand_vdo():
     Function to expand a VDO (Virtual Data Optimizer) volume.
     """
     try:
-        slow_validInput.print_slow("As you journey deeper into the realm of data optimization, you encounter a VDO volume,")
-        slow_validInput.print_slow("its digital essence pulsating with the promise of untapped potential.")
-        slow_validInput.print_slow("To unleash its full power, you must expand its boundaries,")
-        slow_validInput.print_slow("allowing it to absorb new data and grow in strength.\n")
+        slow_validInput.print_slow("Upon landing on VDO-351-xy, you are greeted by a team of engineers eager to assist you in your mission.")
+        slow_validInput.print_slow("Your task here is to expand the existing VDO volumes, increasing their capacity to accommodate growing data demands.\n")
+        slow_validInput.print_slow("You assess the current usage and performance metrics of the VDO volumes, identifying opportunities for expansion.")
+        slow_validInput.print_slow("Using advanced cybernetic tools, you initiate the expansion process, seamlessly integrating additional resources into the volumes.\n")
+        slow_validInput.print_slow("As the volumes expand, you monitor their progress, ensuring that data optimization algorithms adjust accordingly.")
+        slow_validInput.print_slow("The expansion process is a delicate balance of resource allocation and data management, requiring careful attention to detail.\n")
+        
         slow_validInput.print_slow("Remember, you can exit at any time by typing 'quit' or 'q'.\n")
 
         while True:

@@ -6,10 +6,12 @@ def add_group():
     """
     try:
         slow_validInput.print_slow("\n\nChallenge: Add Group on Red Hat Linux\n\n")
-        slow_validInput.print_slow("As you embark on this challenge, you find yourself in the realm of system administration.")
-        slow_validInput.print_slow("The task before you is to add a new group on Red Hat Linux, paving the way for collaborative work and shared resources.")
-        slow_validInput.print_slow("Your journey begins with the invocation of the sacred command, harnessing the power of Linux to shape the digital landscape.\n")
-        slow_validInput.print_slow("Choose wisely, for the fate of this digital domain lies in your hands.\n")
+        slow_validInput.print_slow("Upon your arrival on the planet Managius-Permissius, you are immediately tasked with an important mission: to add a new group to the planetary system.")
+        slow_validInput.print_slow("Groups play a crucial role in managing permissions and access control, and your expertise is needed to ensure the smooth operation of the planet's data infrastructure.\n")
+        slow_validInput.print_slow("You begin by carefully assessing the requirements for the new group, considering factors such as its purpose, membership, and access privileges.\n")
+        slow_validInput.print_slow("With meticulous planning and attention to detail, you define the parameters for the new group and prepare to integrate it into the planetary system.\n")
+        slow_validInput.print_slow("Using your cybernetic tools and administrative utilities, you initiate the process of adding the new group, ensuring that all necessary configurations are in place.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -50,10 +52,11 @@ def create_directory():
     """
     try:
         slow_validInput.print_slow("\n\nChallenge: Create Directory\n\n")
-        slow_validInput.print_slow("As you embark on this challenge, you find yourself in the realm of file system management.")
-        slow_validInput.print_slow("The task before you is to create a new directory, enabling collaboration and file sharing.")
-        slow_validInput.print_slow("Your journey begins with the invocation of the sacred command, shaping the digital landscape with precision.\n")
-        slow_validInput.print_slow("Choose wisely, for the fate of this digital domain lies in your hands.\n")
+        slow_validInput.print_slow("As you settle into your role on the planet Managius-Permissius, you are tasked with creating directories to organize and manage the vast amounts of data.")
+        slow_validInput.print_slow("Directories serve as the backbone of the planetary data infrastructure, providing structure and order to the ever-expanding repositories of information.\n")
+        slow_validInput.print_slow("You begin by identifying key areas where directories are needed, considering factors such as data type, access requirements, and organizational hierarchy.\n")
+        slow_validInput.print_slow("With your cybernetic tools and administrative utilities, you initiate the process of creating directories, carefully specifying their names, locations, and permissions.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -90,10 +93,11 @@ def change_ownership():
     """
     try:
         slow_validInput.print_slow("\n\nChallenge: Change Ownership of Directory\n\n")
-        slow_validInput.print_slow("As you embark on this challenge, you find yourself in the realm of file system management.")
-        slow_validInput.print_slow("The task before you is to change the ownership of a directory, granting new privileges and access rights.")
-        slow_validInput.print_slow("Your journey begins with the invocation of the sacred command, shaping the digital landscape with precision.\n")
-        slow_validInput.print_slow("Choose wisely, for the fate of this digital domain lies in your hands.\n")
+        slow_validInput.print_slow("As you delve deeper into your responsibilities on the planet Managius-Permissius, you encounter the need to change ownership of certain files and directories.")
+        slow_validInput.print_slow("Ownership plays a crucial role in access control and data management, and your expertise is required to ensure proper governance of the planetary data ecosystem.\n")
+        slow_validInput.print_slow("You begin by identifying the files and directories for which ownership needs to be changed, considering factors such as data sensitivity and organizational structure.\n")
+        slow_validInput.print_slow("With your cybernetic tools and administrative utilities, you initiate the process of changing ownership, carefully specifying the new owners and their respective permissions.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -138,10 +142,11 @@ def change_permissions():
     """
     try:
         slow_validInput.print_slow("\n\nChallenge: Change Permissions of Directory\n\n")
-        slow_validInput.print_slow("As you embark on this challenge, you find yourself in the realm of file system management.")
-        slow_validInput.print_slow("The task before you is to change the permissions of a directory, controlling access to its contents.")
-        slow_validInput.print_slow("Your journey begins with the invocation of the sacred command, shaping the digital landscape with precision.\n")
-        slow_validInput.print_slow("Choose wisely, for the fate of this digital domain lies in your hands.\n")
+        slow_validInput.print_slow("As your journey on the planet Managius-Permissius progresses, you encounter the need to adjust permissions on various files and directories.")
+        slow_validInput.print_slow("Permissions are essential for controlling access to data and ensuring the security and integrity of the planetary data infrastructure.\n")
+        slow_validInput.print_slow("You carefully assess the permissions of each file and directory, considering factors such as data sensitivity and user requirements.\n")
+        slow_validInput.print_slow("With your cybernetic tools and administrative utilities, you initiate the process of changing permissions, adjusting settings to reflect the evolving needs of the planetary system.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -189,10 +194,11 @@ def add_user():
     """
     try:
         slow_validInput.print_slow("\n\nChallenge: Add User\n\n")
-        slow_validInput.print_slow("As you embark on this challenge, you find yourself in the realm of user management.")
-        slow_validInput.print_slow("The task before you is to add a new user, granting access to the digital domain.")
-        slow_validInput.print_slow("Your journey begins with the invocation of the sacred command, shaping the digital landscape with precision.\n")
-        slow_validInput.print_slow("Choose wisely, for the fate of this digital domain lies in your hands.\n")
+        slow_validInput.print_slow("As you navigate the complexities of data management on the planet Managius-Permissius, you encounter the need to add new users to the system.")
+        slow_validInput.print_slow("Users are the lifeblood of the planetary data infrastructure, each playing a vital role in the collaborative efforts to advance knowledge and innovation.\n")
+        slow_validInput.print_slow("You begin by assessing the requirements for the new users, considering factors such as their roles, responsibilities, and access privileges.\n")
+        slow_validInput.print_slow("With your cybernetic tools and administrative utilities, you initiate the process of adding users, carefully configuring their accounts to align with planetary policies and security protocols.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -247,10 +253,11 @@ def modify_user():
     """
     try:
         slow_validInput.print_slow("\n\nChallenge: Modify User\n\n")
-        slow_validInput.print_slow("As you embark on this challenge, you find yourself in the realm of user management.")
-        slow_validInput.print_slow("The task before you is to modify an existing user, refining their access to the digital domain.")
-        slow_validInput.print_slow("Your journey continues with the invocation of the sacred command, shaping the digital landscape with precision.\n")
-        slow_validInput.print_slow("Choose wisely, for the fate of this digital domain lies in your hands.\n")
+        slow_validInput.print_slow("As your journey on the planet Managius-Permissius unfolds, you encounter the need to modify existing user accounts.")
+        slow_validInput.print_slow("User accounts are dynamic entities, requiring occasional adjustments to accommodate changes in roles, responsibilities, and access requirements.\n")
+        slow_validInput.print_slow("You carefully review the attributes of each user account, considering factors such as their current roles, permissions, and organizational affiliations.\n")
+        slow_validInput.print_slow("With your cybernetic tools and administrative utilities, you initiate the process of modifying user accounts, making adjustments to reflect the evolving needs of the planetary system.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:

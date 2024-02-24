@@ -6,11 +6,13 @@ def configure_autofs_server():
     """
     try:
         slow_validInput.print_slow("\n\nConfiguring autofs for NFS Server:\n\n")
-        slow_validInput.print_slow("As you prepare to automate the mounting of NFS shares,")
-        slow_validInput.print_slow("you enindexer the gatekeeper of dynamic mounting - autofs.")
-        slow_validInput.print_slow("Autofs beckons you with promises of on-demand mounting and unmounting,")
-        slow_validInput.print_slow("its mechanisms seamlessly integrating NFS shares into your system.\n")
-        slow_validInput.print_slow("But first, you must invoke the sacred commands to install and configure autofs,\n")
+        slow_validInput.print_slow("As you survey the landscape of Auto-q652-FS, you realize that optimizing Autofs configurations on the server side will be crucial.")
+        slow_validInput.print_slow("You access the central server, the heart of the planet's filesystem management system, and begin to configure Autofs settings.\n")
+        slow_validInput.print_slow("You define automount maps, specifying the filesystems to be automatically mounted when accessed by users or applications.\n")
+        slow_validInput.print_slow("Each map is meticulously crafted to ensure efficient data access and management across the planet's network.\n")
+        slow_validInput.print_slow("Additionally, you fine-tune timeout settings, ensuring that idle filesystems are unmounted promptly to conserve resources.\n")
+        slow_validInput.print_slow("With each configuration tweak, the server becomes more responsive and efficient, seamlessly managing filesystems to meet the demands of Auto-q652-FS.\n")
+        
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 
         # Define the correct commands in the specified order
@@ -78,9 +80,12 @@ def configure_autofs_client():
     """
     try:
         slow_validInput.print_slow("\n\nConfiguring autofs for NFS Client:\n\n")
-        slow_validInput.print_slow("As you prepare to automate the mounting of NFS shares on the client side,")
-        slow_validInput.print_slow("you enindexer the gatekeeper of dynamic mounting - autofs.")
-        slow_validInput.print_slow("Autofs promises to dynamically mount NFS shares on demand, simplifying access to remote files.\n")
+        slow_validInput.print_slow("With the Autofs configurations optimized on the server side, it's time to configure Autofs on the client side.")
+        slow_validInput.print_slow("You access the client machines scattered across Auto-q652-FS, ready to implement the necessary changes.\n")
+        slow_validInput.print_slow("On each client machine, you edit the Autofs configuration files, defining the mount points and specifying the server addresses.\n")
+        slow_validInput.print_slow("Each client is carefully configured to seamlessly access the filesystems managed by the central server.\n")
+        slow_validInput.print_slow("You verify the configurations, ensuring that Autofs is set to automatically mount the required filesystems upon access.\n")
+        
         slow_validInput.print_slow("To proceed, follow the steps below to configure autofs on your system:\n")
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 
@@ -148,11 +153,13 @@ def install_nfs():
     """
     try:
         slow_validInput.print_slow("\n\nInstalling NFS (Network File System):\n\n")
-        slow_validInput.print_slow("As you prepare to establish connections across the network plains,")
-        slow_validInput.print_slow("you enindexer the gateway to networked storage - NFS (Network File System).")
-        slow_validInput.print_slow("NFS beckons you with promises of seamless file sharing and access,")
-        slow_validInput.print_slow("its pathways reaching far and wide across the digital landscape.\n")
-        slow_validInput.print_slow("But first, you must invoke the sacred command to install NFS and its allies,\n")
+        slow_validInput.print_slow("With Autofs optimizations complete, you turn your attention to the next phase of infrastructure development: NFS (Network File System) installation and configuration.")
+        slow_validInput.print_slow("NFS is essential for enabling seamless file sharing and access across the network, a crucial component for the interconnected systems of Auto-q652-FS.\n")
+        slow_validInput.print_slow("You access the central server, the nucleus of Auto-q652-FS's data management network, to begin the NFS installation process.\n")
+        slow_validInput.print_slow("Using advanced cybernetic tools, you install the NFS packages and dependencies, laying the foundation for networked file sharing.\n")
+        slow_validInput.print_slow("Once the installation is complete, you proceed to configure the NFS exports, defining the directories and permissions to be shared across the network.\n")
+        slow_validInput.print_slow("Each export is meticulously crafted to ensure secure and efficient access to the shared filesystems, maintaining data integrity and confidentiality.\n")
+        
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 
         correct_command = "dnf install -y nfs-utils"

@@ -7,9 +7,16 @@ def install_stratis():
     try:
         slow_validInput.print_slow("\n\nInstalling Stratis Storage Management:\n\n")
         slow_validInput.print_slow("Welcome to the Stratis installation process.")
-        slow_validInput.print_slow("Stratis offers cutting-edge storage management capabilities for Linux systems.\n")
-        slow_validInput.print_slow("As you embark on this installation journey, you prepare to unlock the potential of Stratis")
-        slow_validInput.print_slow("and pave the way for streamlined storage operations.\n")
+        slow_validInput.print_slow("As your starship lands on Stratis, you immediately begin the installation process for your base of operations.")
+        slow_validInput.print_slow("The planet's rugged terrain presents challenges, but your expertise allows you to find an optimal location.")
+        slow_validInput.print_slow("You deploy automated drones to assist with construction, their mechanical arms whirring as they assemble structures.")
+        slow_validInput.print_slow("The base begins to take shape, with power generators humming and communication arrays extending towards the sky.\n")
+        slow_validInput.print_slow("However, as the installation progresses, you encounter unexpected obstacles.")
+        slow_validInput.print_slow("Storms lash out from the horizon, threatening to damage your equipment.")
+        slow_validInput.print_slow("Additionally, strange energy readings disrupt your systems, hinting at hidden phenomena on Stratis.\n")
+        slow_validInput.print_slow("Despite these challenges, your determination drives you forward.")
+        slow_validInput.print_slow("You implement safeguards and optimizations, ensuring the stability and efficiency of your installation.")
+        
         slow_validInput.print_slow("Let us begin the installation:\n")
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 
@@ -76,9 +83,15 @@ def create_stratis_snapshot():
     try:
         slow_validInput.print_slow("\n\nCreating Stratis Filesystem Snapshot:\n\n")
         slow_validInput.print_slow("Welcome to the Stratis filesystem snapshot creation process.")
-        slow_validInput.print_slow("Stratis offers powerful storage management capabilities for Linux systems.\n")
-        slow_validInput.print_slow("As you embark on this journey, you prepare to capture a snapshot")
-        slow_validInput.print_slow("of an existing Stratis filesystem and perform related operations.\n")
+        slow_validInput.print_slow("As you explore the rugged landscape of Stratis, you come across a peculiar technology known as 'Stratis Snapshots.'")
+        slow_validInput.print_slow("These snapshots are remnants of past events, frozen in time by unknown forces.")
+        slow_validInput.print_slow("Interacting with a snapshot allows you to glimpse into the past and uncover valuable information.\n")
+        slow_validInput.print_slow("You encounter your first snapshot near a rocky outcrop, its shimmering form pulsating with ethereal energy.")
+        slow_validInput.print_slow("Approaching cautiously, you reach out and touch the snapshot, causing the scene to unfold before you.\n")
+        slow_validInput.print_slow("In the snapshot, you witness a group of explorers facing off against a ferocious native creature.")
+        slow_validInput.print_slow("Their weapons blaze with energy as they struggle to fend off the relentless assault.")
+        slow_validInput.print_slow("Suddenly, a burst of lightning illuminates the sky, freezing the combatants in time.\n")
+        
         slow_validInput.print_slow("Let us begin the snapshot creation process:\n")
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 

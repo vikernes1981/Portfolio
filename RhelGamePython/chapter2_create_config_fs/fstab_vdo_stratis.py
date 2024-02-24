@@ -5,11 +5,12 @@ def add_vdo_fstab():
     Function to add a VDO (Virtual Data Optimizer) volume to /etc/fstab for automatic mounting.
     """
     try:
-        slow_validInput.print_slow("\n\nAs you journey through the digital expanse, you stumble upon the gateway to automated mount points:")
-        slow_validInput.print_slow("/etc/fstab - the keeper of filesystems' destinies.")
-        slow_validInput.print_slow("Here, amidst a sea of configurations, you must forge a path for a VDO volume to join the ranks of")
-        slow_validInput.print_slow("automatically mounted entities, ensuring its seamless integration into the digital landscape.\n")
-        slow_validInput.print_slow("Choose wisely, for each line in /etc/fstab holds the key to orchestrating the harmony of the filesystem realm.\n")
+        slow_validInput.print_slow("Upon landing on VDO-351-xy, you are tasked with integrating a newly created VDO volume into the planet's system.")
+        slow_validInput.print_slow("To ensure seamless access to the volume, you must add it to the /etc/fstab file, which manages filesystem mounts.\n")
+        slow_validInput.print_slow("You carefully edit the /etc/fstab file, adding an entry for the VDO volume along with the necessary parameters.")
+        slow_validInput.print_slow("Each parameter is chosen with precision, optimizing performance and reliability for the mounted volume.\n")
+        slow_validInput.print_slow("Once the entry is added, you save the changes to the /etc/fstab file and initiate a system reboot to apply the configuration.")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
@@ -48,11 +49,11 @@ def add_stratis_fstab():
     Function to add a Stratis filesystem to /etc/fstab for automatic mounting.
     """
     try:
-        slow_validInput.print_slow("\n\nAs you journey through the digital expanse, you stumble upon the gateway to automated mount points:")
-        slow_validInput.print_slow("/etc/fstab - the keeper of filesystems' destinies.")
-        slow_validInput.print_slow("Here, amidst a sea of configurations, you must forge a path for a Stratis filesystem to join the ranks of")
-        slow_validInput.print_slow("automatically mounted entities, ensuring its seamless integration into the digital landscape.\n")
-        slow_validInput.print_slow("Choose wisely, for each line in /etc/fstab holds the key to orchestrating the harmony of the filesystem realm.\n")
+        slow_validInput.print_slow("To ensure seamless access to your Stratis filesystem, you decide to configure it for auto-mounting.")
+        slow_validInput.print_slow("You open the /etc/fstab file, the configuration file used by the system to automatically mount filesystems at boot.\n")
+        slow_validInput.print_slow("With careful consideration, you add an entry for the Stratis pool, specifying its unique identifier and mount point.")
+        slow_validInput.print_slow("You include options for automatic mounting and error handling, ensuring robustness and reliability.\n")
+        
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:

@@ -6,6 +6,18 @@ def write_advanced_bash_script():
     """
     try:
         slow_validInput.print_slow("\n\nWriting an Advanced Bash Script:\n\n")
+        
+        slow_validInput.print_slow("Rumors of a secret location hidden within the vast archives of the planetary data repository begin to surface.")
+        slow_validInput.print_slow("Whispers of a long-lost tome, known as 'Bashius Scriptus,' echo through the corridors of the data centers, sparking intrigue and curiosity among the cybernetic experts.\n")
+        slow_validInput.print_slow("Determined to uncover the truth behind these rumors, you embark on a quest to explore the hidden depths of the archive, guided by whispers and legends of the ancient tome.\n")
+        slow_validInput.print_slow("Navigating through the labyrinthine passages of the archive, you encounter encrypted terminals and intricate access controls, testing your cybernetic skills and knowledge of data management.\n")
+        slow_validInput.print_slow("After hours of meticulous searching, you stumble upon a concealed chamber deep within the heart of the archive, its entrance obscured by layers of encryption and security measures.\n")
+        slow_validInput.print_slow("Inside the chamber, illuminated by the soft glow of data terminals, lies the fabled tome of Bashius Scriptus, its ancient pages filled with cryptic symbols and arcane commands.\n")
+        slow_validInput.print_slow("With trembling hands, you reach out and grasp the tome, feeling a surge of excitement and anticipation coursing through your veins.\n")
+        slow_validInput.print_slow("As you flip through its pages, you are mesmerized by the wealth of knowledge contained within – from shell scripting and command-line utilities to advanced automation techniques and system administration tricks.\n")
+        slow_validInput.print_slow("With Bashius Scriptus in your possession, you realize that you hold the key to unlocking untold possibilities in the realm of data management and cybernetic engineering.\n")
+        slow_validInput.print_slow("Armed with this ancient wisdom, you return to your duties on Managius-Permissius, ready to harness its power and forge a new path towards technological mastery.\n")
+        
         slow_validInput.print_slow("Let's create an advanced Bash script together!")
         slow_validInput.print_slow("You will be guided through various features and constructs of Bash scripting.")
         slow_validInput.print_slow("Type 'quit' or 'q' to exit at any time.\n")
