@@ -206,12 +206,21 @@ def manage_and_create_stratis_pool_fs():
             "stratis fs destroy mypool myfs",  # Destroys the specified Stratis filesystem 'myfs' in the 'mypool' pool
             "stratis pool destroy mypool"  # Destroys the specified Stratis pool 'mypool'
         ]
-
+        to_do = [
+        "Create a Stratis pool named 'mypool' using /dev/sda",
+        "Add additional data device (/dev/sdb) to the 'mypool' pool",
+        "Create a Stratis filesystem named 'myfs' within the 'mypool' pool",
+        "Create a snapshot of the 'myfs' filesystem in the 'mypool' pool",
+        "List Stratis filesystems within the specified pool",
+        "List available Stratis pools",
+        "Destroy the specified Stratis filesystem 'myfs' in the 'mypool' pool",
+        "Destroy the specified Stratis pool 'mypool'",
+        ]
         quit_commands = ["quit", "q"]
         index = 0
         slow_validInput.print_slow("There are 8 commands you must give in the correct order!")
         while index < len(correct_commands):
-            user_command = input(f"Enter the command: '{correct_commands[index]}' (type 'quit' or 'q' to exit): ")
+            user_command = input(f"{to_do[index]}. Enter the command: '{index + 1}' (type 'quit' or 'q' to exit): ")
             if user_command.strip().lower() in quit_commands:
                 slow_validInput.print_slow("Exiting the process. Farewell!")
                 return False

@@ -64,5 +64,4 @@ def write_advanced_bash_script():
         slow_validInput.print_slow("An error occurred:", e)
         return False
 
-write_advanced_bash_script()
 

@@ -62,7 +62,7 @@ def add_stratis_fstab():
                 slow_validInput.print_slow("Exiting the task. Farewell!")
                 return False
 
-            if user_input.strip() == "echo 'stratispool-mnt /mnt/stratis xfs defaults,x-systemd.requires=stratisd.service 0 0' >> /etc/fstab":
+            if user_input.strip() == "echo 'stratispool /mnt/stratis xfs defaults,x-systemd.requires=stratisd.service 0 0' >> /etc/fstab":
                 slow_validInput.print_slow("Stratis filesystem added to /etc/fstab successfully!")
                 slow_validInput.print_slow("\nOutput Example:")
                 slow_validInput.print_slow("  stratispool-mnt /mnt/stratis xfs defaults 0 0")
@@ -76,7 +76,7 @@ def add_stratis_fstab():
                 return True
             else:
                 slow_validInput.print_slow("Incorrect command. Please try again or type 'quit' to exit.")
-                slow_validInput.print_slow("Hint: echo 'stratispool-mnt /mnt/stratis xfs defaults,x-systemd.requires=stratisd.service 0 0' >> /etc/fstab")
+                slow_validInput.print_slow("Hint: echo 'stratispool /mnt/stratis xfs defaults,x-systemd.requires=stratisd.service 0 0' >> /etc/fstab")
                 continue
     except KeyboardInterrupt:
         slow_validInput.print_slow("\nExiting the program due to user interruption (Ctrl+C). Goodbye!")

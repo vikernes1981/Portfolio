@@ -18,12 +18,16 @@ def install_stratis():
             "systemctl enable --now stratisd",  # Enables and starts Stratis daemon
             "wipefs -a /dev/sda",  # Erases filesystem signatures on /dev/sda
         ]
-
+        to_do = [
+        "Install Stratis packages",
+        "Enable and start Stratis daemon",
+        "Erase filesystem signatures on /dev/sda",
+        ]
         quit_commands = ["quit", "q"]
         index = 0
         slow_validInput.print_slow("There are 3 commands you must give in the correct order!")
         while index < len(correct_commands):
-            user_command = input(f"Enter the command: '{correct_commands[index]}' (type 'quit' or 'q' to exit): ")
+            user_command = input(f"{to_do[index]}. Enter the command: '{index + 1}' (type 'quit' or 'q' to exit): ")
             if user_command.strip().lower() in quit_commands:
                 slow_validInput.print_slow("Exiting the installation. Farewell!")
                 return False
@@ -81,14 +85,18 @@ def create_stratis_snapshot():
         correct_commands = [
             "stratis fs snapshot mypool myfs",  # Creates a snapshot of the 'myfs' filesystem in the 'mypool' pool
             "stratis fs list mypool",  # Lists all Stratis filesystems within the 'mypool' pool
-            "stratis fs destroy-snapshot mypool myfs <snapshot>",  # Destroys the specified snapshot of 'myfs' filesystem in 'mypool' pool
+            "stratis fs destroy-snapshot mypool myfs snapshot1",  # Destroys the specified snapshot of 'myfs' filesystem in 'mypool' pool
         ]
-
+        to_do = [
+        "Create a snapshot of the 'myfs' filesystem in the 'mypool' pool",
+        "List all Stratis filesystems within the 'mypool' pool",
+        "Destroy the specified snapshot1 of 'myfs' filesystem in 'mypool' pool"
+        ]
         quit_commands = ["quit", "q"]
         index = 0
         slow_validInput.print_slow("There are 3 commands you must give in the correct order!")
         while index < len(correct_commands):
-            user_command = input(f"Enter the command: '{correct_commands[index]}' (type 'quit' or 'q' to exit): ")
+            user_command = input(f"{to_do[index]}. Enter the command: '{index + 1}' (type 'quit' or 'q' to exit): ")
             if user_command.strip().lower() in quit_commands:
                 slow_validInput.print_slow("Exiting the process. Farewell!")
                 return False

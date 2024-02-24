@@ -13,7 +13,7 @@ def add_group():
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
-            user_input = input("Type the command to add a group: ")
+            user_input = input("Type the command to add a group named 'team' with GID 40000: ")
 
             if user_input.strip().lower() in ['quit', 'q']:
                 slow_validInput.print_slow("Exiting the task. Farewell!")
@@ -57,7 +57,7 @@ def create_directory():
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
-            user_input = input("Type the command to create a directory in /home, named shared: ")
+            user_input = input("Type the command to create a directory in /home, named 'shared' : ")
 
             if user_input.strip().lower() in ['quit', 'q']:
                 slow_validInput.print_slow("Exiting the task. Farewell!")
@@ -97,7 +97,7 @@ def change_ownership():
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
-            user_input = input("Type the command to change ownership of a directory: ")
+            user_input = input("Type the command to change ownership of /home/shared.Owner is 'nobody' and group is 'team' : ")
 
             if user_input.strip().lower() in ['quit', 'q']:
                 slow_validInput.print_slow("Exiting the task. Farewell!")
@@ -145,7 +145,7 @@ def change_permissions():
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
-            user_input = input("Type the command to change permissions of a directory: ")
+            user_input = input("Type the command to change permissions of a directory.User should be able to read/write/execute, group read/write, others shouldn't be able to do anything : ")
 
             if user_input.strip().lower() in ['quit', 'q']:
                 slow_validInput.print_slow("Exiting the task. Farewell!")
@@ -196,7 +196,7 @@ def add_user():
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
-            user_input = input("Type the command to add a user: ")
+            user_input = input("Type the command to add user1: ")
 
             if user_input.strip().lower() in ['quit', 'q']:
                 slow_validInput.print_slow("Exiting the task. Farewell!")
@@ -254,7 +254,7 @@ def modify_user():
         slow_validInput.print_slow("Remember to use 'quit' or 'q' to exit at any time.\n")
 
         while True:
-            user_input = input("Type the command to modify a user: ")
+            user_input = input("Type the command to modify user1.User1 should be on his group and on group1 : ")
 
             if user_input.strip().lower() in ['quit', 'q']:
                 slow_validInput.print_slow("Exiting the task. Farewell!")

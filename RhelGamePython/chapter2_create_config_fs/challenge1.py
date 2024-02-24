@@ -27,7 +27,7 @@ def configure_stratis():
             print("4. Add Stratis volume in /etc/fstab")
             print("5. Continue to next challenge\n")
 
-            choice = slow_validInput.get_valid_input("Enter your choice (1-8): ", valid_choices)
+            choice = slow_validInput.get_valid_input("Enter your choice (1-5): ", valid_choices)
 
             if choice == '1':
                 slow_validInput.print_slow("You embark on your journey by installing Stratis packages, laying the foundation for advanced storage management.")

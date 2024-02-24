@@ -125,7 +125,7 @@ def install_vdo():
         slow_validInput.print_slow("But first, you must install VDO and its companion, kmod-kvdo, by uttering the sacred command.\n")
         slow_validInput.print_slow("You can quit at any time by typing 'quit' or 'q'.\n")
 
-        correct_command = "yum install -y vdo kmod-kvdo"
+        correct_command = "dnf install -y vdo kmod-kvdo"
         quit_commands = ["quit", "q"]
 
         while True:
@@ -145,7 +145,7 @@ def install_vdo():
                 return True
             else:
                 print("Incorrect command. Try again.")
-                print("Hint: Use 'yum install -y vdo kmod-kvdo' to install VDO and kmod-kvdo.")
+                print("Hint: Use 'dnf install -y vdo kmod-kvdo' to install VDO and kmod-kvdo.")
                 continue
     except KeyboardInterrupt:
         print("\nExiting the task due to user interruption (Ctrl+C). Farewell!")

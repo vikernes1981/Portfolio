@@ -83,7 +83,7 @@ def configure_vdo():
 
             elif choice == '6':
                 slow_validInput.print_slow("You choose to add the VDO volume to /etc/fstab, ensuring it is mounted automatically on boot.")
-                if fstab_vdo.add_vdo_fstab() == False:
+                if fstab_vdo_stratis.add_vdo_fstab() == False:
                     continue
                 slow_validInput.print_slow("VDO volume added to /etc/fstab successfully!\n")
                 count += 1
