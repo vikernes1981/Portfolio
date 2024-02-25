@@ -13,10 +13,21 @@ def start_game():
         slow_validInput.print_slow("Welcome to the Red Hat Odyssey, where legends are born and destinies are forged amidst the endless expanse of cyberspace.\n")
         slow_validInput.print_slow("As you step into the virtual realm, you are greeted by the luminous glow of neon terminals and the hum of servers.")
         slow_validInput.print_slow("A message materializes before you, beckoning you to unlock the secrets of the digital universe:")
-        slow_validInput.print_slow("‘Welcome, adventurer. Your mission, should you choose to accept it, is to conquer the challenges that lie ahead")
-        slow_validInput.print_slow("and emerge as the ultimate master of Red Hat administration. But beware, for the path ahead is fraught with peril and uncertainty.")
-        slow_validInput.print_slow("Only by harnessing your skills and intellect can you hope to prevail in the face of adversity.'\n")
+        slow_validInput.print_slow("'Welcome, adventurer. Your mission, should you choose to accept it, is to conquer the challenges that lie ahead")
+        slow_validInput.print_slow("and emerge as the ultimate master of Red Hat administration. But beware, for the path ahead is fraught with peril and uncertainty.'\n")
         input("Press Enter to embark on your journey...")
+
+        # Introduce player background
+        slow_validInput.print_slow("\nYou remember the countless hours spent honing your skills, preparing for this moment.")
+        slow_validInput.print_slow("Your determination is unwavering as you step forward, ready to face whatever challenges await.")
+        slow_validInput.print_slow("With a deep breath, you accept the mission and begin your journey into the unknown.\n")
+
+        # Foreshadowing
+        slow_validInput.print_slow("Little do you know, the trials ahead will push you to your limits, testing not only your technical prowess but also your resolve.")
+        slow_validInput.print_slow("But fear not, for with each challenge overcome, you grow stronger, inching closer to your ultimate goal.")
+        
     except KeyboardInterrupt:
         print("\nGame interrupted. Exiting...")
         exit()
+
+start_game()

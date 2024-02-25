@@ -6,12 +6,11 @@ def challenge_4():
     Fourth challenge: Uncover Disk Secrets.
     """
     try:
-        slow_validInput.print_slow("\n\nChallenge 4: Uncover Disk Secrets\n\n")
-        slow_validInput.print_slow("As you delve deeper into the digital labyrinth, the air grows heavy with the scent of rust and machinery.")
-        slow_validInput.print_slow("You find yourself standing before a series of hidden chambers, their entrances concealed by the passage of time.")
-        slow_validInput.print_slow("In these forgotten alcoves, the mysteries of disk management await your discovery, hidden beneath layers of code and data.")
-        slow_validInput.print_slow("With each step, you can feel the weight of history pressing down upon you, urging you forward into the unknown.")
-        slow_validInput.print_slow("Choose your actions wisely, for the secrets you uncover may hold the key to the salvation or downfall of the digital realm.\n")
+        slow_validInput.print_slow("As you journey further into the depths of storage management, you recognize the importance of understanding the physical layer of storage.")
+        slow_validInput.print_slow("Physical volumes serve as the foundation upon which logical volumes and volume groups are built.")
+        slow_validInput.print_slow("To gain a comprehensive understanding of the system's storage infrastructure, you embark on a quest to explore physical volumes.\n")
+        slow_validInput.print_slow("With curiosity as your guide, you delve into the intricacies of physical volumes.")
+        slow_validInput.print_slow("You examine the available physical storage devices, assessing their characteristics and properties.\n")
     
         count = 0
         valid_choices = ['1', '2', '3', '4']
@@ -32,6 +31,8 @@ def challenge_4():
                 slow_validInput.print_slow("With a sense of anticipation, you peer into the darkness of the hidden chambers, revealing the physical volumes that lie within.")
                 if physical_volumes.view_physical_volumes() == False:
                     continue
+                slow_validInput.print_slow("Issuing commands to view the details of physical volumes, you meticulously review the information presented.")
+                slow_validInput.print_slow("You observe attributes such as size, usage, and health status, gaining valuable insights into the underlying storage hardware.\n")
                 slow_validInput.print_slow("Physical volumes viewed successfully!")
                 count += 1
                 continue
@@ -39,6 +40,8 @@ def challenge_4():
                 slow_validInput.print_slow("With determination in your heart, you forge a new path forward, creating a physical volume from the raw materials of the digital realm.")
                 if physical_volumes.create_physical_volume() == False:
                     continue
+                slow_validInput.print_slow("Armed with knowledge of physical volumes, you consider strategies for optimizing storage performance and reliability.")
+                slow_validInput.print_slow("You explore techniques such as load balancing and redundancy, ensuring that storage resources are utilized efficiently and resiliently.\n")
                 slow_validInput.print_slow("Physical volume created successfully!")
                 count += 1
                 continue
@@ -50,6 +53,9 @@ def challenge_4():
                 count += 1
                 continue
             elif choice == '4':
+                slow_validInput.print_slow("As your quest to explore physical volumes concludes, you reflect on the journey.")
+                slow_validInput.print_slow("Through exploration and analysis, you've gained a deeper understanding of the system's storage infrastructure.")
+                slow_validInput.print_slow("With this knowledge, you're better equipped to optimize storage resources and ensure the system's resilience in the Red Hat Odyssey.\n")
                 break
     except Exception as e:
         print("An error occurred:", e)

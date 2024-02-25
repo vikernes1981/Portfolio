@@ -12,10 +12,14 @@ def check_remove_logical_volume_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you traverse the labyrinthine corridors of the digital realm, you come across a chamber shrouded in shadows.")
-        slow_validInput.print_slow("Within this chamber lies an ancient artifact known as the 'lvremove' command, whispered of in legends.")
-        slow_validInput.print_slow("This command holds the power to unshackle logical volumes from the bonds of their existence,")
-        slow_validInput.print_slow("freeing them to roam the vast expanses of the storage universe once more.\n")
+        slow_validInput.print_slow("However, as you continue to optimize the system, you realize that some logical volumes are no longer needed.")
+        slow_validInput.print_slow("With careful consideration, you decide to remove these unnecessary volumes to free up storage space.\n")
+        slow_validInput.print_slow("You issue commands to remove the identified logical volumes, double-checking to ensure that no critical data will be lost.")
+        slow_validInput.print_slow("As the commands execute, you watch attentively, confirming that each volume is successfully removed from the system.\n")
+        slow_validInput.print_slow("With each unnecessary logical volume removed, you feel a sense of liberation, knowing that you're reclaiming valuable storage resources.")
+        slow_validInput.print_slow("You carefully review the remaining volumes, ensuring that the system's storage is optimized for maximum efficiency.")
+        slow_validInput.print_slow("As the system undergoes this transformation, you reflect on the importance of maintaining a lean and efficient infrastructure.")
+        slow_validInput.print_slow("By removing unnecessary clutter, you're ensuring that the system remains agile and responsive to future challenges.")
 
         while True:
             user_command = input("Enter the command to remove a logical volume on a Red Hat system or type 'quit/q' to exit : ")
@@ -43,7 +47,10 @@ def check_remove_logical_volume_command():
                 print("As you wield the 'lvremove' command, the whispers of the liberated volumes echo through the chamber,")
                 print("ushering forth a symphony of newfound freedom.\n")
                 print("Output Example:")
-                print("  Logical volume lv1 in volume group vg1 successfully removed")
+                print("  Logical volume lv1 in volume group vg1 successfully removed\n")
+                slow_validInput.print_slow("With the removal of the identified logical volumes, you take a moment to appreciate the system's streamlined configuration.")
+                slow_validInput.print_slow("Each action taken brings you closer to your goal of mastering Red Hat administration and safeguarding the cybernetic infrastructure.")
+                slow_validInput.print_slow("As you prepare for the next challenge, you're filled with confidence, knowing that you're making a difference in the digital world.\n")
                 print("\nYou can continue your journey.")
                 return True
             else:
@@ -69,9 +76,14 @@ def check_resize_logical_volume_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you traverse the digital expanse, you stumble upon a nexus of storage, where the fabric of reality bends to the will of those who dare to reshape it.")
-        slow_validInput.print_slow("Before you lies the 'lvresize' command, an ancient incantation capable of altering the very dimensions of logical volumes.")
-        slow_validInput.print_slow("With this command, you hold the power to expand the boundaries of storage realms, accommodating the ever-growing needs of your digital endeavors.\n")
+        slow_validInput.print_slow("As you delve deeper into system optimization, you realize the need to adjust the sizes of certain logical volumes.")
+        slow_validInput.print_slow("With careful planning, you decide to resize these volumes to better allocate storage resources.\n")
+        slow_validInput.print_slow("You issue commands to resize the identified logical volumes, ensuring that the changes are made smoothly and without data loss.")
+        slow_validInput.print_slow("As the commands execute, you observe the resizing process, verifying that each volume is adjusted according to your specifications.\n")
+        slow_validInput.print_slow("With the resizing of the logical volumes complete, you feel a sense of satisfaction, knowing that you've optimized storage allocation.")
+        slow_validInput.print_slow("You carefully review the updated volumes, ensuring that the system's resources are distributed efficiently.")
+        slow_validInput.print_slow("As the system adapts to the resized volumes, you marvel at the flexibility of modern storage technologies.")
+        slow_validInput.print_slow("By adjusting volumes on-the-fly, you're able to meet changing demands and maintain optimal performance.")
 
         while True:
             user_command = input("Enter the command to resize a logical volume on a Red Hat system or type 'quit/q' to exit : ")
@@ -99,7 +111,10 @@ def check_resize_logical_volume_command():
                 print("lvresize -r -L +2G /dev/myvg/mylv\t# Increase and resize the filesystem of 'mylv' by 2 gigabytes.\n")
                 print("As you utter the command, the fabric of storage space begins to ripple and expand, accommodating your will.\n")
                 print("Output Example:")
-                print("Size of logical volume lv1 changed from X to Y")
+                print("Size of logical volume lv1 changed from X to Y\n")
+                slow_validInput.print_slow("With the successful resizing of logical volumes, you take a moment to appreciate the system's enhanced flexibility.")
+                slow_validInput.print_slow("Each action taken brings you closer to mastering the intricacies of Red Hat administration and ensuring the system's resilience.")
+                slow_validInput.print_slow("As you prepare for the next challenge, you're filled with confidence, knowing that you can adapt to whatever the digital world throws your way.\n")
                 print("\nYou can continue your journey.")
                 return True
             else:
@@ -125,9 +140,14 @@ def check_view_logical_volume_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you venture deeper into the digital realm, you come across a mystical gateway that grants insight into the fabric of storage.")
-        slow_validInput.print_slow("Before you lies the 'lvs' command, a portal into the vast expanse of Logical Volumes, each a realm of data waiting to be explored.")
-        slow_validInput.print_slow("With this command, you can peer into the very essence of storage structures, unlocking secrets hidden within.\n")
+        slow_validInput.print_slow("With the system optimization underway, you recognize the importance of regularly monitoring the status of logical volumes.")
+        slow_validInput.print_slow("To gain insights into the current configuration, you decide to view the details of all logical volumes.\n")
+        slow_validInput.print_slow("You issue commands to view the details of all logical volumes, seeking information on their sizes, usage, and mount points.")
+        slow_validInput.print_slow("As the commands execute, you analyze the output, gaining valuable insights into the system's storage infrastructure.\n")
+        slow_validInput.print_slow("As you review the details of each logical volume, you gain a deeper understanding of the system's storage utilization.")
+        slow_validInput.print_slow("You make mental notes of any areas that may require further optimization or adjustment.")
+        slow_validInput.print_slow("Armed with this information, you feel more confident in your ability to maintain the system's stability and performance.")
+        slow_validInput.print_slow("Regular monitoring and analysis of logical volumes will ensure that the system remains resilient to potential challenges.")
 
         while True:
             user_command = input("Enter the command to view Logical Volumes on a Red Hat system or type 'quit/q' to exit : ")
@@ -147,6 +167,9 @@ def check_view_logical_volume_command():
                 print("  lv_home  vg00 -wi-ao---- 100.00g")
                 print("  lv_var   vg01 -wi-a----- 150.00g")
                 print("\nAs you invoke the command, the veil of mystery lifts, revealing the intricate tapestry of Logical Volumes.\n")
+                slow_validInput.print_slow("With the successful viewing of logical volumes, you take a moment to appreciate the insights gained.")
+                slow_validInput.print_slow("Each action taken brings you closer to mastering the art of Red Hat administration and ensuring the system's reliability.")
+                slow_validInput.print_slow("As you prepare to tackle the next task, you do so with renewed confidence, knowing that you have a clear understanding of the system's storage infrastructure.\n")
                 print("You can continue your journey, armed with newfound knowledge.")
                 return True
             else:
@@ -172,9 +195,14 @@ def check_extend_logical_volume_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you journey deeper into the realm of storage manipulation, you encounter the 'lvextend' command.")
-        slow_validInput.print_slow("This command holds the power to stretch the very fabric of Logical Volumes, expanding their boundaries and unlocking new potential.")
-        slow_validInput.print_slow("Prepare to wield the 'lvextend' command wisely as you navigate the landscape of storage growth.\n")
+        slow_validInput.print_slow("As you continue to monitor the system's storage usage, you notice that certain volumes are approaching capacity.")
+        slow_validInput.print_slow("To prevent potential issues and accommodate future growth, you decide to extend these volumes to increase their capacity.\n")
+        slow_validInput.print_slow("You issue commands to extend the identified logical volumes, carefully specifying the additional size to be allocated.")
+        slow_validInput.print_slow("As the commands execute, you observe the extension process, ensuring that each volume is expanded without data loss.\n")
+        slow_validInput.print_slow("With each volume successfully extended, you feel a sense of relief, knowing that you've proactively addressed potential storage constraints.")
+        slow_validInput.print_slow("You review the updated volumes, confirming that they now have the capacity to accommodate future data growth.")
+        slow_validInput.print_slow("As the system adapts to the expanded volumes, you marvel at the flexibility of modern storage technologies.")
+        slow_validInput.print_slow("By extending volumes seamlessly, you're able to ensure the system's readiness for evolving storage demands.")
 
         while True:
             user_command = input("Enter the command to extend a Logical Volume on a Red Hat system or type 'quit/q' to exit : ")
@@ -200,6 +228,10 @@ def check_extend_logical_volume_command():
                 print("lvextend -r -L+2G /dev/vg1/lv1\t# Extend and resize the filesystem of 'lv1' by 2 gigabytes.")
                 print("\nOutput Example:")
                 print("Size of logical volume vg1/lv1 changed from <old_size> to <new_size>.")
+                slow_validInput.print_slow("With the successful extension of logical volumes, you take a moment to appreciate the system's enhanced scalability.")
+                slow_validInput.print_slow("Each action taken brings you closer to mastering the intricacies of Red Hat administration and ensuring the system's resilience.")
+                slow_validInput.print_slow("As you prepare for the next challenge, you do so with renewed confidence, knowing that you've effectively managed the system's storage resources.\n")
+
                 print("\nYou can continue your journey, empowered by the wisdom of 'lvextend'.")
                 return True
             else:
@@ -224,9 +256,14 @@ def check_create_logical_volume_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you embark on the journey to forge new realms of storage, you encounter the 'lvcreate' command.")
-        slow_validInput.print_slow("This command holds the key to summoning forth new logical volumes from the depths of your volume groups,")
-        slow_validInput.print_slow("expanding your storage domain with every invocation.\n")
+        slow_validInput.print_slow("As you assess the system's storage requirements, you identify the need for additional storage space to accommodate growing data.")
+        slow_validInput.print_slow("With careful planning, you decide to create new logical volumes to address this need and enhance the system's storage capacity.\n")
+        slow_validInput.print_slow("You issue commands to create new logical volumes, specifying the size and characteristics of each volume.")
+        slow_validInput.print_slow("As the commands execute, you observe the creation process, ensuring that each volume is set up according to your specifications.\n")
+        slow_validInput.print_slow("With each logical volume successfully created, you feel a sense of accomplishment, knowing that you've expanded the system's storage capacity.")
+        slow_validInput.print_slow("You review the details of the new volumes, confirming that they meet the system's requirements and will effectively serve their intended purposes.")
+        slow_validInput.print_slow("As the system incorporates the new volumes, you envision the possibilities they bring for storing and managing data.")
+        slow_validInput.print_slow("With each volume strategically allocated, you're confident in the system's ability to handle current and future data needs.")
 
         while True:
             user_command = input("Enter the command to create a logical volume on a Red Hat system or type 'quit/q' to exit : ")
@@ -253,7 +290,10 @@ def check_create_logical_volume_command():
                 print("lvcreate -L 1G -n lv1 vg1\t# Create a logical volume named 'lv1' with size 1GB in volume group 'vg1'.")
                 print("lvcreate -i2 -I64 -L 2G -n lv1 vg1\t# Create a striped logical volume with size 2GB, 2 stripes, and stripe size of 64K.")
                 print("\nOutput Example:")
-                print("Logical volume lv1 created.")
+                print("Logical volume lv1 created.\n")
+                slow_validInput.print_slow("With the successful creation of logical volumes, you take a moment to appreciate the system's enhanced storage capabilities.")
+                slow_validInput.print_slow("Each action taken brings you closer to mastering the intricacies of Red Hat administration and ensuring the system's readiness for evolving demands.")
+                slow_validInput.print_slow("As you prepare for the next challenge, you do so with renewed confidence, knowing that you've effectively expanded the system's storage resources.\n")
                 print("\nYou can continue your journey, empowered by the magic of 'lvcreate'.")
                 return True
             else:

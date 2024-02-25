@@ -16,12 +16,8 @@ def provide_uuid_line():
     mount_point = "/mnt"
 
     try:
-        slow_validInput.print_slow("\n\nAs you journey through the digital wilderness, you stumble upon a mysterious path."
-                                   "This path, known only to the wise, leads to the heart of the filesystem, where UUIDs reside."
-                                   "As you approach, the whispers of the ancients guide your steps, revealing a hidden truth:"
-                                   "Each UUID holds the key to a realm of data, waiting to be unlocked by those who dare to seek."
-                                   "With courage in your heart, you take a step forward, ready to embrace the challenge.\n\n"
-                                   f"Your quest begins with the discovery of the following UUID:\n {correct_uuid}\n and the Mount point :\n {mount_point}\n")
+
+        slow_validInput.print_slow(f"Your quest begins with the discovery of the following UUID:\n {correct_uuid}\n and the Mount point :\n {mount_point}\n")
 
         while True:
             user_line = input("Enter the line with the UUID,(type 'quit' or 'q' to exit): ")
@@ -41,7 +37,7 @@ def provide_uuid_line():
                 print("Example: UUID=966cd40a-0aab-464b-b930-7909fefea8db /mnt ext4 defaults 0 0")
                 print("Options: Additional options can be specified in the /etc/fstab file for mounting.")
                 print("Options: 'defaults' typically includes options for read/write access and other standard settings.")
-                print("         '0 0' specifies filesystem check and order of dumping.")
+                print("         '0 0' specifies filesystem check and order of dumping.\n")
                 continue
     except KeyboardInterrupt:
         print("\nExiting the program due to user interruption (Ctrl+C). Farewell!")

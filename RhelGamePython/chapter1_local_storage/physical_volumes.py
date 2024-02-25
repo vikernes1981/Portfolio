@@ -12,13 +12,13 @@ def remove_physical_volume():
     quit_command = ["quit", "q"]
 
     try:
-        print("\n\nAs you journey deeper into the digital wilderness, you encounter the remnants of an ancient infrastructure,"
-              "where the essence of data is bound to physical vessels."
-              "These vessels, known as physical volumes, serve as the conduits through which raw data flows,"
-              "each bearing the weight of countless digital experiences."
-              "In your quest to reshape the digital landscape, you must learn to wield the power to unbind these vessels,"
-              "freeing the data within to seek new paths and purpose."
-              "The voice of the elders echoes in your mind, guiding your hand as you prepare to undertake this sacred task.\n")
+        slow_validInput.print_slow("As you continue your journey through storage management, you encounter scenarios where certain storage devices need to be retired or replaced.")
+        slow_validInput.print_slow("Removing physical volumes associated with these devices is crucial to maintain the integrity and efficiency of the storage infrastructure.")
+        slow_validInput.print_slow("To address this, you embark on a quest to safely remove the designated physical volumes.\n")
+        slow_validInput.print_slow("With careful consideration, you assess the implications of removing the physical volumes.")
+        slow_validInput.print_slow("You review the volume group configurations and ensure that removing the physical volumes will not compromise data integrity or system performance.\n")
+        slow_validInput.print_slow("Issuing commands to remove the physical volumes, you proceed cautiously, following best practices to minimize risks.")
+        slow_validInput.print_slow("As the commands execute, you monitor the removal process, ensuring that each physical volume is detached safely.\n")
         
         while True:
             # Prompt the user for input
@@ -39,7 +39,12 @@ def remove_physical_volume():
                 print("-y, --yes\t\tAssume 'yes' as answer to all questions.")
                 print("-v, --verbose\t\tProvide verbose output.")
                 print("\nOutput Example:")
-                print("Labels on physical volume \"/dev/sdb1\" successfully wiped.")
+                print("Labels on physical volume \"/dev/sdb1\" successfully wiped.\n")
+                slow_validInput.print_slow("After the removal completes, you verify the system's status to confirm the successful removal of the designated physical volumes.")
+                slow_validInput.print_slow("You check for any errors or warnings, ensuring that the storage infrastructure remains stable and operational.\n")
+                slow_validInput.print_slow("As your quest to remove physical volumes concludes, you reflect on the journey.")
+                slow_validInput.print_slow("Through careful planning and execution, you've successfully retired or replaced designated storage devices.")
+                slow_validInput.print_slow("With the physical volumes removed, you're poised to maintain the integrity and efficiency of the storage infrastructure in the Red Hat Odyssey.\n")
                 print("\nYou can continue with the game.")
                 return True
             else:
@@ -71,12 +76,13 @@ def create_physical_volume():
     quit_command = ["quit", "q"]
 
     try:
-        print("\n\nAs you journey deeper into the digital wilderness, you encounter a realm where the fabric of reality is"
-              "woven from the essence of raw data."
-              "In this ethereal domain, the seeds of creation are sown through the act of transformation – the forging"
-              "of physical volumes that serve as the building blocks of digital landscapes."
-              "With each command uttered, you shape the destiny of this realm, imbuing it with the potential to host"
-              "countless experiences and narratives.\n")
+        slow_validInput.print_slow("As you delve deeper into storage management, you recognize the need to prepare additional storage devices for integration into the system.")
+        slow_validInput.print_slow("Creating physical volumes is the first step in incorporating new storage devices into the storage infrastructure.")
+        slow_validInput.print_slow("To expand the system's storage capacity and flexibility, you embark on a quest to create physical volumes.\n")
+        slow_validInput.print_slow("With determination, you assess the available storage devices and select those to be designated as physical volumes.")
+        slow_validInput.print_slow("You consider factors such as device type, capacity, and compatibility with the system.\n")
+        slow_validInput.print_slow("Issuing commands to create physical volumes, you proceed with precision, specifying the parameters for each volume.")
+        slow_validInput.print_slow("As the commands execute, you observe the creation process, ensuring that each physical volume is initialized successfully.\n")
         
         while True:
             # Prompt the user for input
@@ -97,7 +103,12 @@ def create_physical_volume():
                 print("-ff, --force\t\tForce initialization of device.")
                 print("-M, --metadatatype\tSet metadata format.")
                 print("\nOutput Example:")
-                print("Physical volume \"/dev/sdb1\" successfully created")
+                print("Physical volume \"/dev/sdb1\" successfully created\n")
+                slow_validInput.print_slow("After the creation completes, you verify the system's status to confirm the successful establishment of the physical volumes.")
+                slow_validInput.print_slow("You check for any errors or warnings, ensuring that the newly created physical volumes are ready for use.\n")
+                slow_validInput.print_slow("As your quest to create physical volumes concludes, you reflect on the journey.")
+                slow_validInput.print_slow("Through careful planning and execution, you've successfully prepared additional storage devices for integration into the system.")
+                slow_validInput.print_slow("With the physical volumes created, you're well-positioned to expand the system's storage capacity and adapt to evolving data requirements in the Red Hat Odyssey.\n")
                 print("\nYou can continue with the game.")
                 return True
             else:
@@ -128,12 +139,13 @@ def view_physical_volumes():
     quit_command = ["quit", "q"]
 
     try:
-        print("\n\nAs you traverse the vast expanse of the digital realm, you come upon a repository of knowledge hidden"
-              "beneath layers of code and data."
-              "In this sacred archive, the essence of creation is laid bare, manifested in the form of physical volumes"
-              "that serve as the bedrock of digital existence."
-              "Through the lens of perception, you peer into the depths of this repository, seeking to unravel the"
-              "mysteries that lie within.\n")
+        slow_validInput.print_slow("As you delve deeper into storage management, you recognize the importance of gaining insights into the physical layer of storage.")
+        slow_validInput.print_slow("Understanding the properties and status of physical volumes is essential for maintaining and optimizing storage infrastructure.")
+        slow_validInput.print_slow("To this end, you embark on a quest to view and analyze the physical volumes present in the system.\n")
+        slow_validInput.print_slow("With curiosity as your guide, you navigate through the system's storage devices, seeking information on physical volumes.")
+        slow_validInput.print_slow("You issue commands to view the details of all physical volumes, eager to gain insights into their configurations and health.\n")
+        slow_validInput.print_slow("As the commands execute, you meticulously review the information presented for each physical volume.")
+        slow_validInput.print_slow("You observe attributes such as size, usage, and health status, gaining valuable insights into the underlying storage hardware.\n")
         
         while True:
             # Prompt the user for input
@@ -162,7 +174,12 @@ def view_physical_volumes():
                 print("Total PE              238466")
                 print("Free PE               138466")
                 print("Allocated PE          100000")
-                print("PV UUID               eARbpM-M43p-5vMz-hTtM-6F9m-3l6N-AgXYBv")
+                print("PV UUID               eARbpM-M43p-5vMz-hTtM-6F9m-3l6N-AgXYBv\n")
+                slow_validInput.print_slow("Armed with knowledge of physical volumes, you analyze the system's storage utilization and identify areas for optimization.")
+                slow_validInput.print_slow("You consider factors such as capacity, usage patterns, and performance requirements, devising strategies to enhance storage efficiency.\n")
+                slow_validInput.print_slow("As your quest to view physical volumes concludes, you reflect on the journey.")
+                slow_validInput.print_slow("Through exploration and analysis, you've gained valuable insights into the system's storage infrastructure.")
+                slow_validInput.print_slow("With this knowledge, you're better equipped to optimize storage resources and ensure the system's resilience in the Red Hat Odyssey.\n")
 
                 print("\nYou can continue with the game.")
                 return True

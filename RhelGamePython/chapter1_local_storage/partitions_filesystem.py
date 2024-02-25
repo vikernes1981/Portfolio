@@ -15,8 +15,11 @@ def check_force_partition_check_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you delve into the depths of system partitioning, you encounter the mystical 'partprobe' command,")
-        slow_validInput.print_slow("a tool that holds the key to awakening the kernel to changes in your partition tables.\n")
+        slow_validInput.print_slow("You reach a critical juncture in your mission, where precise actions are needed to stabilize the system.")
+        slow_validInput.print_slow("Remembering your training, you decide to use the 'partprobe' command to inform the operating system of partition table changes.\n")
+        slow_validInput.print_slow("With bated breath, you execute the command, waiting anxiously for the system's response.")
+        slow_validInput.print_slow("After a tense moment, the screen displays the reassuring message: 'Partition table updated successfully.'")
+        slow_validInput.print_slow("A wave of relief washes over you as you continue your mission, knowing that you've taken a crucial step towards restoring stability to the system.\n")
 
         while True:
             user_command = input("Enter the command to force partition check on a Red Hat system (type 'quit' or 'q' to exit): ")
@@ -61,8 +64,12 @@ def check_disks_partitions_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you journey through the labyrinth of system storage, you encounter the revered 'lsblk' command,")
-        slow_validInput.print_slow("a mystical tool that unveils the secrets of disks and their partitions.\n")
+        slow_validInput.print_slow("However, your work is not yet done. Another critical task lies ahead.")
+        slow_validInput.print_slow("You need to ensure the health and integrity of all disks and partitions.")
+        slow_validInput.print_slow("Recalling your training, you decide to employ the 'lsblk' to perform a comprehensive check.\n")
+        slow_validInput.print_slow("As the command executes, you monitor the output closely, analyzing each line of information.")
+        slow_validInput.print_slow("Your expertise allows you to swiftly identify any irregularities or potential issues.")
+        slow_validInput.print_slow("With each passing moment, your confidence grows, knowing that you're one step closer to securing the system.\n")
 
         while True:
             user_command = input("Enter the command to list disks and partitions on a Red Hat system (type 'quit' or 'q' to exit): ")
@@ -116,8 +123,12 @@ def check_uuid_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you traverse through the labyrinth of system storage, you stumble upon the enigmatic 'blkid' command,")
-        slow_validInput.print_slow("a tool said to hold the key to unraveling the mystical UUIDs of your system's devices.\n")
+        slow_validInput.print_slow("But there's one more task to complete in your mission.")
+        slow_validInput.print_slow("You must gather crucial information about the filesystems and partitions.")
+        slow_validInput.print_slow("Turning to your arsenal of commands, you decide to use 'blkid' to list all available block devices along with their attributes.\n")
+        slow_validInput.print_slow("The output scrolls across your screen, providing vital details about each block device.")
+        slow_validInput.print_slow("You carefully examine the information, noting down UUIDs and filesystem types.")
+        slow_validInput.print_slow("With this data in hand, you're better equipped to navigate the intricacies of the system and fulfill your mission.\n")
 
         while True:
             user_command = input("Enter the command to get UUIDs on a Red Hat system (type 'quit' or 'q' to exit): ")
@@ -165,8 +176,11 @@ def check_disk_space_command():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you embark on a journey through the vast expanse of storage, you come across the venerable 'df' command,")
-        slow_validInput.print_slow("a tool whispered to reveal the secrets of disk space allocation.\n")
+        slow_validInput.print_slow("As you delve deeper into your mission, you realize the importance of understanding the disk space usage across the system.")
+        slow_validInput.print_slow("Recalling your training, you decide to use the 'df -h' command to display the disk space usage in a human-readable format.\n")
+        slow_validInput.print_slow("The output reveals valuable insights into the allocation and utilization of disk space.")
+        slow_validInput.print_slow("You analyze the information meticulously, identifying any areas of concern or potential optimizations.")
+        slow_validInput.print_slow("Armed with this knowledge, you're better prepared to optimize the system's performance and ensure its continued stability.\n")
 
         while True:
             user_command = input("Enter the command to list disk space on a Red Hat system (type 'quit' or 'q' to exit): ")
@@ -215,8 +229,12 @@ def create_ext4_on_lvm():
     quit_command = ["quit", "q"]
 
     try:
-        slow_validInput.print_slow("As you navigate through the intricate world of storage, you stumble upon the venerable 'mkfs.ext4' command,")
-        slow_validInput.print_slow("a tool whispered to wield the power of file system creation on logical volumes.\n")
+        slow_validInput.print_slow("However, to further optimize the system, you recognize the need to create a new ext4 filesystem.")
+        slow_validInput.print_slow("With a swift command, you initiate the creation process, specifying the desired parameters.\n")
+
+        slow_validInput.print_slow("The command executes flawlessly, and within moments, the new ext4 filesystem is created.")
+        slow_validInput.print_slow("You meticulously verify the results, ensuring that the filesystem meets the specified requirements.")
+        slow_validInput.print_slow("With the addition of the new filesystem, the system's capabilities are expanded, and its performance is further optimized.\n")
 
         while True:
             user_command = input("Enter the command to create an ext4 file system on a logical volume (type 'quit' or 'q' to exit): ")
