@@ -1,220 +1,141 @@
-import slow_validInput
+import CommandGenerator
 
-def lv_swap_partition_creation():
-    """
-    Create a Logical Volume (LV) for swap partition.
-    """
-    correct_command = "lvcreate -L 2G -n swap1 vg1"
-    correct_commands = {
-        "mkswap": "mkswap /dev/vg1/swap1",
-        "swapon": "swapon /dev/vg1/swap1",
-        "swapoff": "swapoff /dev/vg1/swap1",
-        "umount": "umount /mnt"
-    }
-    quit_command = ["quit", "q"]
+label = "swaplabel"
 
-    try:
-        slow_validInput.print_slow("As you journey deeper into the digital wilderness, you stumble upon a forgotten enclave nestled amidst the circuitry and data streams.")
-        slow_validInput.print_slow("Within this hidden sanctuary, ancient texts whisper tales of a realm where memory transcends the limitations of physicality.")
-        slow_validInput.print_slow("The air crackles with static energy as you approach a monolithic structure, its surface adorned with glyphs of arcane symbols.")
-        slow_validInput.print_slow("A voice, resonating from the depths of the digital ether, beckons you to unlock the secrets of swap space – a realm where memory and magic intertwine.\n")
-        slow_validInput.print_slow("You stand before the threshold of knowledge, tasked with the creation of a swap partition as a logical volume (LV).")
-        slow_validInput.print_slow("This ethereal construct, forged from the fabric of the digital realm, is said to enhance the performance and stability of systems, serving as a conduit for the flow of virtual memory.\n")
-        
-        while True:
-            user_command_lvcreate = input("Enter the command to create a swap partition as a logical volume ('quit' or 'q' to exit): ")
-            print("\n")
-            if user_command_lvcreate.strip() in quit_command:
-                print("Exiting the task as per user request. Farewell!")
-                return False
-            elif user_command_lvcreate.strip() == correct_command:
-                print("Command is correct. Here's information about the command:")
-                print("- 'lvcreate': Command to create a logical volume")
-                print("- '-L 2G': Option to specify the size of the logical volume (2 gigabytes in this case)")
-                print("- '-n swap1': Option to specify the name of the logical volume (swap1)")
-                print("- 'vg1': Name of the volume group to which the logical volume belongs")
-                print("\nPurpose:")
-                print("The 'lvcreate' command is used to create a logical volume within a volume group.")
-                print("\nOptions:")
-                print("- '-l, --extents': Specify the size of the logical volume in extents")
-                print("- '-i, --stripes': Create a striped logical volume")
-                print("- '-I, --stripesize': Specify the stripe size for a striped logical volume")
-                print("\nExamples:")
-                print("lvcreate -L 2G -n swap1 vg1\t# Create a logical volume named 'swap1' with size 2GB in volume group 'vg1'.")
-                print("lvcreate -l 100%FREE -n data_lv my_vg\t# Create a logical volume 'data_lv' using all available space in 'my_vg'.")
-                print("\nOutput Example:")
-                print("Logical volume swap1 created.")
-                print("\nYou can continue.")
-                break
-            else:
-                print("Command is incorrect. Try again.")
-                print("Hint: Use 'lvcreate -L 2G -n swap1 vg1' to create a swap partition as a logical volume.")
-                continue
+lv_swap_partition_creation = CommandGenerator.CommandGenerator(
+action = "create a Logical Volume (LV) for swap partition",
+correct_command = "lvcreate -L 2G -n swap1 vg1",
+hint = "Hint: Use 'lvcreate -L 2G -n swap1 vg1' to create a swap partition as a logical volume.",
+command_output = ["Logical volume swap1 created."],
+command_aspects = [
+"- 'lvcreate': Command to create a logical volume",
+"- '-L 2G': Option to specify the size of the logical volume (2 gigabytes in this case)",
+"- '-n swap1': Option to specify the name of the logical volume (swap1)",
+"- 'vg1': Name of the volume group to which the logical volume belongs",
+],
+command_options = [
+"- '-l, --extents': Specify the size of the logical volume in extents",
+"- '-i, --stripes': Create a striped logical volume",
+"- '-I, --stripesize': Specify the stripe size for a striped logical volume",
+],
 
-        while True:
-            user_command_mkswap = input("Enter the command to format the logical volume as swap ('quit' or 'q' to exit): ")
-            print("\n")
-            if user_command_mkswap.strip() in quit_command:
-                print("Exiting the task as per user request. Farewell!")
-                return False
-            elif user_command_mkswap.strip() == correct_commands["mkswap"]:
-                print("Command is correct.")
-                print("mkswap command formats the logical volume as swap.")
-                print("\nPurpose:")
-                print("The 'mkswap' command is used to set up a Linux swap area on a device or partition.")
-                print("\nOptions:")
-                print("- '-c, --check': Check the bad blocks before creating the swap area")
-                print("- '-f, --force': Force to create the swap area")
-                print("\nExamples:")
-                print("mkswap /dev/vg1/swap1\t# Format the logical volume 'swap1' as swap.")
-                print("\nOutput Example:")
-                print("Setting up swapspace version 1, size = 2097148 KiB")
-                print("no label, UUID=97017f63-6db1-4d47-8f10-418c79126324")
-                print("\nYou can continue.")
-                break
-            else:
-                print("Command is incorrect. Try again.")
-                print(f"Hint: Use '{correct_commands['mkswap']}' to format the logical volume as swap.")
-                continue
+intro_text = ["""\nAs you journey deeper into the digital wilderness, you stumble upon a forgotten enclave nestled amidst the circuitry and data streams.
+Within this hidden sanctuary, ancient texts whisper tales of a realm where memory transcends the limitations of physicality.
+The air crackles with static energy as you approach a monolithic structure, its surface adorned with glyphs of arcane symbols.
+A voice, resonating from the depths of the digital ether, beckons you to unlock the secrets of swap space – a realm where memory and magic intertwine.\n
+You stand before the threshold of knowledge, tasked with the creation of a swap partition as a logical volume (LV).
+This ethereal construct, forged from the fabric of the digital realm, is said to enhance the performance and stability of systems, serving as a conduit for the flow of virtual memory.\n""",
+],
 
-        while True:
-            user_command_swapon = input("Enter the command to activate the swap partition ('quit' or 'q' to exit): ")
-            print("\n")
-            if user_command_swapon.strip() in quit_command:
-                print("Exiting the task as per user request. Farewell!")
-                return False
-            elif user_command_swapon.strip() == correct_commands["swapon"]:
-                print("Command is correct.")
-                print("swapon command activates the swap partition.")
-                print("\nPurpose:")
-                print("The 'swapon' command is used to enable devices and files for paging and swapping.")
-                print("\nOptions:")
-                print("- '-s, --show': Display swap usage summary")
-                print("- '-p, --priority': Set the priority of the swap area")
-                print("- '-e, --early': Enable swap early during boot")
-                print("\nExamples:")
-                print("swapon /dev/vg1/swap1\t# Activate the swap partition.")
-                print("\nOutput Example:")
-                print("NAME         TYPE      SIZE  USED PRIO")
-                print("/dev/dm-1    partition   2G    0B   -2")
-                print("\nYou can continue.")
-                break
-            else:
-                print("Command is incorrect. Try again.")
-                print(f"Hint: Use '{correct_commands['swapon']}' to activate the swap partition.")
-                continue
+outro_text = ["",],
+)
 
-        while True:
-            user_command_swapoff = input("Enter the command to deactivate the swap partition ('quit' or 'q' to exit): ")
-            print("\n")
-            if user_command_swapoff.strip() in quit_command:
-                print("Exiting the task as per user request. Farewell!")
-                return False
-            elif user_command_swapoff.strip() == correct_commands["swapoff"]:
-                print("Command is correct.")
-                print("swapoff command deactivates the swap partition.")
-                print("\nPurpose:")
-                print("The 'swapoff' command is used to disable devices and files from paging and swapping.")
-                print("\nOptions:")
-                print("- '-a, --all': Disable all swap areas.")
-                print("\nExamples:")
-                print("swapoff /dev/vg1/swap1\t# Deactivate the swap partition.")
-                print("\nOutput Example:")
-                print("Swap partition /dev/vg1/swap1 was successfully deactivated.")
-                print("\nYou can continue.")
-                break
-            else:
-                print("Command is incorrect. Try again.")
-                print(f"Hint: Use '{correct_commands['swapoff']}' to deactivate the swap partition.")
-                continue
 
-        while True:
-            user_command_umount = input("Enter the command to unmount a partition ('quit' or 'q' to exit): ")
-            print("\n")
-            if user_command_umount.strip() in quit_command:
-                print("Exiting the task as per user request. Farewell!")
-                return False
-            elif user_command_umount.strip() == correct_commands["umount"]:
-                print("Command is correct.")
-                print("umount command unmounts the swap partition.")
-                print("\nPurpose:")
-                print("The 'umount' command is used to unmount a currently mounted filesystem.")
-                print("\nOptions:")
-                print("- '-l, --lazy': Lazy unmount")
-                print("- '-a, --all': Unmount all mountpoints mentioned in /etc/mtab")
-                print("\nExamples:")
-                print("umount /mnt\t# Unmount the mountpoint '/mnt'.")
-                print("\nOutput Example:")
-                print("The swap partition is unmounted successfully.")
-                print("\nYou can continue.")
-                break
-            else:
-                print("Command is incorrect. Try again.")
-                print(f"Hint: Use '{correct_command}' to create a swap partition as a logical volume (LV).")
-                continue 
+mkswap = CommandGenerator.CommandGenerator(
+action = "format Logical Volume as swap",
+correct_command = "mkswap /dev/vg1/swap1",
+hint = "Hint: Use 'mkswap' to format the logical volume as swap.",
+command_output = [
+"Setting up swapspace version 1, size = 2097148 KiB",
+"no label, UUID=97017f63-6db1-4d47-8f10-418c79126324",
+],
+command_aspects = ["- mkswap : Command to format a partition to swap",
+"- /dev/vg1/swap1 : Logical Volume to become swap",
+],
+command_options = [
+"- '-c, --check': Check the bad blocks before creating the swap area",
+"- '-f, --force': Force to create the swap area",
+],
 
-    except KeyboardInterrupt:
-        print("\nExiting the task due to user interruption (Ctrl+C). Farewell!")
-        return False
-    except Exception as e:
-        print("An error occurred during LV swap partition creation:", e)
-        return False
+intro_text = ["",],
+outro_text = ["",],
+)
 
-def provide_swap_label_line():
-    """
-    Prompt the user to provide a line with the swap label.
-    Check if the provided line is correct.
-    If correct, inform the user that the line is valid.
-    If false, provide a hint and ask the user to try again.
-    """
-    correct_swap_label = "swaplabel"
-    correct_swap_uuid = "966cd40a-0aab-464b-b930-7909fefea8db"
-    correct_line = [f'LABEL={correct_swap_label} swap swap defaults 0 0', f'UUID={correct_swap_uuid} swap swap defaults 0 0']
-    hint = f"Hint: Use 'LABEL={correct_swap_label} swap swap defaults 0 0' to provide the swap label line or\nUUID={correct_swap_uuid} swap swap defaults 0 0"
-    quit_commands = ["quit", "q"]
 
-    try:
-        print("\n\nAs you traverse the digital landscape, you come across a hidden realm known as the Swap Dimension."
-              "Here, memories are stored and retrieved in the blink of an eye, facilitating the flow of data across dimensions."
-              "In this realm, you discover the essence of your journey - the sacred Swap Label."
-              "With determination in your heart, you step forth, ready to uncover its mysteries.\n\n"
-              f"Your quest begins with the discovery of the following :\nSwap Label: {correct_swap_label}\nUUID: {correct_swap_uuid}")
+swapon = CommandGenerator.CommandGenerator(
+action = "activate swap partition",
+correct_command = "swapon /dev/vg1/swap1",
+hint = "Hint: Use swapon /dev/vg1/swap1 to activate the swap partition.",
+command_output = [
+"NAME         TYPE      SIZE  USED PRIO",
+"/dev/dm-1    partition   2G    0B   -2",
+],
+command_aspects = [
+"- swapon : Command to activate swap partition",
+"- /dev/vg1/swap1 : Logical Volume to be activated as swap",
+],
+command_options = [
+"- '-s, --show': Display swap usage summary",
+"- '-p, --priority': Set the priority of the swap area",
+"- '-e, --early': Enable swap early during boot",
+"- '-L <label>' : This command activates the swap partition with the specified label.",
+"- 'UUID=<UUID>' :  This command activates the swap partition with the specified UUID",
+],
+intro_text = ["",],
+outro_text = ["",],
+)
 
-        while True:
-            user_line = input("Enter the line with the Swap Label or UUID (type 'quit' or 'q' to exit): ").strip()
-            print("\n")
-            if not user_line:
-                print(hint)
-                print("No input provided. Please try again.")
-                continue
 
-            if user_line in quit_commands:
-                print("Exiting the task. Farewell!")
-                return False
+swapoff = CommandGenerator.CommandGenerator(
+action = "deactivate a swap partition",
+correct_command = "swapoff /dev/vg1/swap1",
+hint = "Hint: Use swapoff /dev/vg1/swap1 to deactivate the swap partition.",
+command_output = ["Swap partition /dev/vg1/swap1 was successfully deactivated.",],
+command_aspects = [
+"- swapoff : Command to deactivate swap partition",
+"- /dev/vg1/swap1 : Logical Volume to be deactivated",
+],
+command_options = [
+"- '-a, --all': Disable all swap areas.",
+"- '-L <label>' : This command activates the swap partition with the specified label.",
+"- 'UUID=<UUID>' :  This command activates the swap partition with the specified UUID",
+],
 
-            if user_line in correct_line:
-                if 'swaplabel' in user_line:
-                    print("Line is correct. Swap label line provided successfully.")
-                    print("Example:")
-                    print(f"LABEL={correct_swap_label} swap swap defaults 0 0")
-                    return True
-                else:
-                    print("Line is correct. UUID line provided successfully.")
-                    print("Example:")
-                    print(f"UUID={correct_swap_uuid} swap swap defaults 0 0")
-                    return True
-            else:
-                print("Line is incorrect. Try again.")
-                print(hint)
-                print("Example: " + correct_line[0])
-                print("Note: The 'swap' type indicates that this partition is intended for swap space.")
-                print("Options: Additional options can be specified for swapping.")
-                print("         'defaults' typically includes options for standard settings.")
-                print("         '0 0' specifies filesystem check and order of dumping.")
-                continue
-    except KeyboardInterrupt:
-        print("\nExiting the program due to user interruption (Ctrl+C). Farewell!")
-        return False
-    except Exception as e:
-        print("An error occurred:", e)
-        return False
+intro_text = ["",],
+outro_text = ["",],
+)
+
+
+umount = CommandGenerator.CommandGenerator(
+action = "unmount a partition",
+correct_command =  "umount /mnt",
+hint = "Hint: Use umount /mnt to create a swap partition as a logical volume (LV).",
+command_output = ["The swap partition is unmounted successfully.",],
+command_aspects = [
+"- umount : Command to unmount a partition",
+"- /mnt : Partition to ne unmounted",
+],
+command_options = [
+"- '-l, --lazy': Lazy unmount.When you issue a lazy unmount command, the filesystem is flagged for unmounting, but the actual unmounting is deferred until all references to it are released.",
+"- '-a, --all': This option specifies that all filesystems listed in the /etc/fstab file should be unmounted.",
+],
+intro_text = ["",],
+outro_text = ["",],
+)
+
+
+provide_swap_label_line = CommandGenerator.CommandGenerator(
+action = "to mount a partition automaticaly on boot",
+correct_command = f"LABEL={label} swap swap defaults 0 0",
+hint = f"Hint: Use 'LABEL={label} swap swap defaults 0 0' to provide the swap label line",
+command_output = ["If command is correct there won't be any output"],
+
+command_aspects = [f"\nLABEL={label}: This part of the line specifies the label of the filesystem. In this context, {label} is a placeholder that would be replaced with the actual label name. When a filesystem is mounted using a label, the system looks for a filesystem with that specific label and mounts it accordingly",
+"\nThe 'swap' mount point indicates that this partition is intended a swap space.",
+"\nThe 'swap' type indicates that this partition is intended for swap space.",
+"\ndefaults: This part specifies the mount options. In this case, it specifies that the default mount options should be used. These options typically include settings for read-write access, permissions, and other parameters that control how the filesystem is mounted.",
+"\n0: This part specifies the dump option. The dump option is used by the dump utility to determine whether the filesystem needs to be backed up. A value of 0 indicates that the filesystem should not be backed up by default.",
+"\n0: This part specifies the fsck option. The fsck option is used by the fsck utility to determine the order in which filesystems should be checked during system boot. A value of 0 indicates that the filesystem should not be checked.",
+"\nOverall, this line is a configuration entry in the /etc/fstab file, which is used by the system to automatically mount filesystems during boot. It specifies the details of how a particular filesystem should be mounted, including its label, mount point, filesystem type, mount options, and other parameters.",
+],
+command_options = ["No options available",],
+
+intro_text = [f"""\nAs you traverse the digital landscape, you come across a hidden realm known as the Swap Dimension.
+Here, memories are stored and retrieved in the blink of an eye, facilitating the flow of data across dimensions.
+In this realm, you discover the essence of your journey - the sacred Swap Label.
+With determination in your heart, you step forth, ready to uncover its mysteries.\n
+Your quest begins with the discovery of the following :\nSwap Label: {label}"""
+
+],
+outro_text = ["",],
+)

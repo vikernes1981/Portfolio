@@ -1,113 +1,118 @@
+import CommandGenerator
 import slow_validInput
 
-### LIST, CREATE, DELETE PARTITIONS ON MBR AND GPT DISKS ###
+
+check_disk_space_command = CommandGenerator.CommandGenerator(
+action = "list disk space on a Red Hat system",
+correct_command = "df -h",
+hint = "Hint: Use 'df -h' to list disk space.",
+command_output = [
+                    """Filesystem                        Size  Used Avail Use% Mounted on
+tmpfs                             773M  2,1M  770M   1% /run
+/dev/nvme0n1p2                    234G   60G  163G  27% /
+tmpfs                             3,8G  2,8M  3,8G   1% /dev/shm
+tmpfs                             5,0M  4,0K  5,0M   1% /run/lock
+/dev/nvme0n1p1                    511M  6,1M  505M   2% /boot/efi
+192.168.0.245:/home/user/nfs  457G   55G  379G  13% /home/user1/nfs-share
+tmpfs                             773M  1,7M  771M   1% /run/user/1000\n"""
+],
+command_aspects = [
+"- df : List disk space",
+"- -h : Show output in human readable form",
+],
+command_options = [
+" - -h, --human-readable: Print sizes in a human-readable format (e.g., 1K, 234M, 2G)",
+" - -a, --all: Include all filesystems, including those with 0 blocks used.",
+"- -l, --local: Limit the output to local filesystems.",
+],
+intro_text = ["""\nAs you delve deeper into your mission, you realize the importance of understanding the disk space usage across the system.
+Recalling your training, you decide to use the 'df -h' command to display the disk space usage in a human-readable format.\n
+The output reveals valuable insights into the allocation and utilization of disk space.
+You analyze the information meticulously, identifying any areas of concern or potential optimizations.
+Armed with this knowledge, you're better prepared to optimize the system's performance and ensure its continued stability.\n""",
+],
+outro_text = ["",],
+)
+
+create_ext4_on_lvm = CommandGenerator.CommandGenerator(
+action = "create an ext4 file system.",
+correct_command = "mkfs.ext4 /dev/vg1/lv1",
+hint = "Hint: Use 'mkfs.ext4 /dev/vg1/lv1' to create an ext4 file system.",
+command_output = [
+"mke2fs 1.45.6 (20-Mar-2020)",
+"Creating filesystem with 26214400 4k blocks and 6553600 inodes",
+"Filesystem UUID: a0d28a15-ef32-4e63-8a26-0e9eac794a10",
+"Superblock backups stored on blocks: ",
+"32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,",
+"4096000, 7962624, 11239424, 20480000, 23887872",
+],
+command_aspects = [
+"- mkfs.ext4 : Creates an ext4 filesystem",
+"- /dev/vg1/lv1 : Partition for the filesystem to be created",
+],
+command_options = [
+"- -L, --label <label> : Specify the volume label.",
+"- -E, --reserved <percent> : Specify the percentage of the filesystem reserved for the super-user.",
+"- -m, --mmp : Enable Multi-Mount Protection.",
+],
+intro_text = ["""\nHowever, to further optimize the system, you recognize the need to create a new ext4 filesystem.
+With a swift command, you initiate the creation process, specifying the desired parameters.\n
+The command executes flawlessly, and within moments, the new ext4 filesystem is created.
+You meticulously verify the results, ensuring that the filesystem meets the specified requirements.
+With the addition of the new filesystem, the system's capabilities are expanded, and its performance is further optimized.\n"""
+
+],
+outro_text = ["",],
+)
 
 
-def check_force_partition_check_command():
-    """
-    Prompt the user to input a command to force partition check on a Red Hat system.
-    Check if the command is correct.
-    If correct, display information about the command and allow the user to continue.
-    If false, provide a hint and ask the user to try again.
-    """
-    correct_command = "partprobe"
-    hint = "Hint: Use 'partprobe' to force partition check."
-    quit_command = ["quit", "q"]
+check_force_partition_check_command = CommandGenerator.CommandGenerator(
+action = "force partition check",
+correct_command = "partprobe",
+hint = "Hint: Use 'partprobe' to force partition check.",
+command_output = ["Partition table updated.",],
+command_aspects = ["- 'partprobe': Command to force partition check",],
+command_options = ["- '-s, --summary': Display summary information after processing",],
 
-    try:
-        slow_validInput.print_slow("You reach a critical juncture in your mission, where precise actions are needed to stabilize the system.")
-        slow_validInput.print_slow("Remembering your training, you decide to use the 'partprobe' command to inform the operating system of partition table changes.\n")
-        slow_validInput.print_slow("With bated breath, you execute the command, waiting anxiously for the system's response.")
-        slow_validInput.print_slow("After a tense moment, the screen displays the reassuring message: 'Partition table updated successfully.'")
-        slow_validInput.print_slow("A wave of relief washes over you as you continue your mission, knowing that you've taken a crucial step towards restoring stability to the system.\n")
+intro_text = ["""\nYou reach a critical juncture in your mission, where precise actions are needed to stabilize the system.
+Remembering your training, you decide to use the 'partprobe' command to inform the operating system of partition table changes.\n
+With bated breath, you execute the command, waiting anxiously for the system's response.
+After a tense moment, the screen displays the reassuring message: 'Partition table updated successfully.'
+A wave of relief washes over you as you continue your mission, knowing that you've taken a crucial step towards restoring stability to the system.\n"""
+],
+outro_text = ["",],
+)
 
-        while True:
-            user_command = input("Enter the command to force partition check on a Red Hat system (type 'quit' or 'q' to exit): ")
-            print("\n")
-            if user_command.strip() == correct_command:
-                print("Command acknowledged. Here's what you need to know about 'partprobe':")
-                print("- 'partprobe': Command to force partition check")
-                print("\nPurpose:")
-                print("The 'partprobe' command informs the operating system kernel of partition table changes.")
-                print("\nOptions:")
-                print("Additional options can be provided with the command to modify its behavior.")
-                print("- '-s, --summary': Display summary information after processing")
-                print("\nExample Output:")
-                print("Partition table updated.")
-                print("\nYou can now proceed with your partitioning endeavors, enlightened by the power of 'partprobe'.")
-                return True
-            elif user_command.strip() in quit_command:
-                print("Exiting the program. Goodbye!")
-                return False
-            else:
-                print("Command unrecognized. Try again.")
-                print(hint)
-                continue
-    except KeyboardInterrupt:
-        print("\nExiting the program due to user interruption (Ctrl+C). Goodbye!")
-        return False
-    except Exception as e:
-        print("An error occurred during the 'partprobe' command execution:", e)
+check_disks_partitions_command = CommandGenerator.CommandGenerator(
+action = "list disks and partitions.",
+correct_command = "lsblk",
+hint = "Hint: Use 'lsblk' to list disks and partitions.",
+command_output = ["""   NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+    loop0         7:0    0     4K  1 loop /snap/bare/5
+    loop1         7:1    0  55,7M  1 loop /snap/core18/2812
+    loop2         7:2    0  63,5M  1 loop /snap/core20/2015
+    loop3         7:3    0  63,9M  1 loop /snap/core20/2105
+    loop4         7:4    0  74,1M  1 loop /snap/core22/1033
+    loop5         7:5    0  74,2M  1 loop /snap/core22/1122
+    nvme0n1     259:0    0 238,5G  0 disk 
+    ├─nvme0n1p1 259:1    0   512M  0 part /boot/efi
+    └─nvme0n1p2 259:2    0   238G  0 part /var/snap/firefox/common/host-hunspell/\n""",],
+command_aspects = ["- 'lsblk': Command to list disks and partitions",],
+command_options = [
+"- '-a, --all': Include all devices (e.g., floppy, RAM disks)",
+"- '-o, --output': Specify columns to display (e.g., 'lsblk -o NAME,SIZE,TYPE,MOUNTPOINT')",
+],
 
+intro_text = ["""\nHowever, your work is not yet done. Another critical task lies ahead.
+You need to ensure the health and integrity of all disks and partitions.
+Recalling your training, you decide to employ the 'lsblk' to perform a comprehensive check.\n
+As the command executes, you monitor the output closely, analyzing each line of information.
+Your expertise allows you to swiftly identify any irregularities or potential issues.
+With each passing moment, your confidence grows, knowing that you're one step closer to securing the system.\n"""
+],
+outro_text = ["",],
+)
 
-
-
-def check_disks_partitions_command():
-    """
-    Prompt the user to input a command to list disks and partitions on a Red Hat system.
-    Check if the command is correct.
-    If correct, display information about the command and allow the user to continue.
-    If false, provide a hint and ask the user to try again.
-    """
-    correct_command = "lsblk"
-    hint = "Hint: Use 'lsblk' to list disks and partitions."
-    quit_command = ["quit", "q"]
-
-    try:
-        slow_validInput.print_slow("However, your work is not yet done. Another critical task lies ahead.")
-        slow_validInput.print_slow("You need to ensure the health and integrity of all disks and partitions.")
-        slow_validInput.print_slow("Recalling your training, you decide to employ the 'lsblk' to perform a comprehensive check.\n")
-        slow_validInput.print_slow("As the command executes, you monitor the output closely, analyzing each line of information.")
-        slow_validInput.print_slow("Your expertise allows you to swiftly identify any irregularities or potential issues.")
-        slow_validInput.print_slow("With each passing moment, your confidence grows, knowing that you're one step closer to securing the system.\n")
-
-        while True:
-            user_command = input("Enter the command to list disks and partitions on a Red Hat system (type 'quit' or 'q' to exit): ")
-            print("\n")
-            if user_command.strip() == correct_command:
-                print("Command acknowledged. Here's what you need to know about 'lsblk':")
-                print("- 'lsblk': Command to list disks and partitions")
-                print("\nPurpose:")
-                print("The 'lsblk' command displays information about block devices (disks) and their partitions.")
-                print("\nOptions:")
-                print("Additional options can be provided with the command to modify its behavior.")
-                print("- '-a, --all': Include all devices (e.g., floppy, RAM disks)")
-                print("- '-o, --output': Specify columns to display (e.g., 'lsblk -o NAME,SIZE,TYPE,MOUNTPOINT')")
-                print("\nOutput Example:")
-                print("""   NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-                            loop0         7:0    0     4K  1 loop /snap/bare/5
-                            loop1         7:1    0  55,7M  1 loop /snap/core18/2812
-                            loop2         7:2    0  63,5M  1 loop /snap/core20/2015
-                            loop3         7:3    0  63,9M  1 loop /snap/core20/2105
-                            loop4         7:4    0  74,1M  1 loop /snap/core22/1033
-                            loop5         7:5    0  74,2M  1 loop /snap/core22/1122
-                            nvme0n1     259:0    0 238,5G  0 disk 
-                            ├─nvme0n1p1 259:1    0   512M  0 part /boot/efi
-                            └─nvme0n1p2 259:2    0   238G  0 part /var/snap/firefox/common/host-hunspell/\n""")
-                print("\nYou can now proceed, armed with the knowledge bestowed upon you by 'lsblk'.")
-                return True
-            elif user_command.strip() in quit_command:
-                print("Exiting the program. Goodbye!")
-                return False
-            else:
-                print("Command unrecognized. Try again.")
-                print(hint)
-                continue
-    except KeyboardInterrupt:
-        print("\nExiting the program due to user interruption (Ctrl+C). Goodbye!")
-        return False
-    except Exception as e:
-        print("An error occurred during the 'lsblk' command execution:", e)
 
 
 def check_uuid_command():
@@ -163,107 +168,3 @@ def check_uuid_command():
         return False
     except Exception as e:
         print("An error occurred during the command execution:", e)
-
-
-def check_disk_space_command():
-    """
-    Ask the user to input a command to list disk space on a Red Hat system.
-    Check if the command is correct.
-    If correct, allow the user to continue. If false, provide a hint and ask the user to try again.
-    """
-    correct_command = "df -h"
-    hint = "Hint: Use 'df -h' to list disk space."
-    quit_command = ["quit", "q"]
-
-    try:
-        slow_validInput.print_slow("As you delve deeper into your mission, you realize the importance of understanding the disk space usage across the system.")
-        slow_validInput.print_slow("Recalling your training, you decide to use the 'df -h' command to display the disk space usage in a human-readable format.\n")
-        slow_validInput.print_slow("The output reveals valuable insights into the allocation and utilization of disk space.")
-        slow_validInput.print_slow("You analyze the information meticulously, identifying any areas of concern or potential optimizations.")
-        slow_validInput.print_slow("Armed with this knowledge, you're better prepared to optimize the system's performance and ensure its continued stability.\n")
-
-        while True:
-            user_command = input("Enter the command to list disk space on a Red Hat system (type 'quit' or 'q' to exit): ")
-            print("\n")
-            if user_command.strip() == correct_command:
-                print("Command is correct. You can continue.")
-                print("Output Example:")
-                print("""Filesystem                        Size  Used Avail Use% Mounted on
-                        tmpfs                             773M  2,1M  770M   1% /run
-                        /dev/nvme0n1p2                    234G   60G  163G  27% /
-                        tmpfs                             3,8G  2,8M  3,8G   1% /dev/shm
-                        tmpfs                             5,0M  4,0K  5,0M   1% /run/lock
-                        /dev/nvme0n1p1                    511M  6,1M  505M   2% /boot/efi
-                        192.168.0.245:/home/user/nfs  457G   55G  379G  13% /home/user1/nfs-share
-                        tmpfs                             773M  1,7M  771M   1% /run/user/1000\n""")
-                return True
-            elif user_command.strip() in quit_command:
-                print("Exiting the program. Goodbye!")
-                return False
-            else:
-                print("Command is incorrect. Try again.")
-                print(hint)
-                print("Options: Additional options can be used with df command to display disk space in different formats or include specific filesystems.")
-                print("Example with options: df -Th /dev/sda1")
-                continue
-    except KeyboardInterrupt:
-        print("\nExiting the program due to user interruption (Ctrl+C). Goodbye!")
-        return False
-    except Exception as e:
-        print("An error occurred during the command execution:", e)
-
-
-
-### CREATE FILESYSTEM
-
-
-def create_ext4_on_lvm():
-    """
-    Prompt the user to provide the command to create an ext4 file system on a logical volume.
-    Check if the command is correct.
-    If correct, inform the user that the command is successful.
-    If false, provide a hint and ask the user to try again.
-    """
-    correct_command = "mkfs.ext4 /dev/vg1/lv1"
-    hint = "Hint: Use 'mkfs.ext4 /dev/vg1/lv1' to create an ext4 file system."
-    quit_command = ["quit", "q"]
-
-    try:
-        slow_validInput.print_slow("However, to further optimize the system, you recognize the need to create a new ext4 filesystem.")
-        slow_validInput.print_slow("With a swift command, you initiate the creation process, specifying the desired parameters.\n")
-
-        slow_validInput.print_slow("The command executes flawlessly, and within moments, the new ext4 filesystem is created.")
-        slow_validInput.print_slow("You meticulously verify the results, ensuring that the filesystem meets the specified requirements.")
-        slow_validInput.print_slow("With the addition of the new filesystem, the system's capabilities are expanded, and its performance is further optimized.\n")
-
-        while True:
-            user_command = input("Enter the command to create an ext4 file system on a logical volume (type 'quit' or 'q' to exit): ")
-            print("\n")
-            if user_command.strip() == correct_command:
-                print("Command is correct. Ext4 file system created successfully.")
-                print("Output Example:")
-                print("mke2fs 1.45.6 (20-Mar-2020)")
-                print("Creating filesystem with 26214400 4k blocks and 6553600 inodes")
-                print("Filesystem UUID: a0d28a15-ef32-4e63-8a26-0e9eac794a10")
-                print("Superblock backups stored on blocks: ")
-                print("        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,")
-                print("        4096000, 7962624, 11239424, 20480000, 23887872")
-
-                return True
-            elif user_command.strip() in quit_command:
-                print("Exiting the program. If you want to continue on this question you have to enter the right command. Goodbye!")
-                return False
-            else:
-                print("Command is incorrect. Try again.")
-                print(hint)
-                print("Options: Additional options can be used with mkfs.ext4 command to specify file system features or reserve space.")
-                print("Options: -L, --label <label> Specify the volume label.")
-                print("         -E, --reserved <percent> Specify the percentage of the filesystem reserved for the super-user.")
-                print("         -m, --mmp        Enable Multi-Mount Protection.")
-                continue
-    except KeyboardInterrupt:
-        print("\n\nExiting the program due to user interruption (Ctrl+C). If you want to continue on this question you have to enter the right command. Goodbye!\n")
-        return False
-    except Exception as e:
-        print("An error occurred during the command execution:", e)
-

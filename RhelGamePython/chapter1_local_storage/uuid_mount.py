@@ -1,51 +1,49 @@
+import CommandGenerator
+
 ### MOUNT WITH UUID ###
 
-import slow_validInput
 
-def provide_uuid_line():
-    """
-    Prompt the user to provide a line with the UUID.
-    Check if the provided line is correct.
-    If correct, inform the user that the line is valid.
-    If false, provide a hint and ask the user to try again.
-    """
-    correct_uuid = "966cd40a-0aab-464b-b930-7909fefea8db"
-    correct_line = f'UUID={correct_uuid} /mnt ext4 defaults 0 0'
-    hint = f"Hint: Use 'UUID={correct_uuid} /mnt ext4 defaults 0 0' to provide the UUID line."
-    quit_commands = ["quit", "q"]
-    mount_point = "/mnt"
+uuid = "966cd40a-0aab-464b-b930-7909fefea8db"
+mount_point = "/mnt"
 
-    try:
+provide_uuid_line = CommandGenerator.CommandGenerator(
+action = "provide the UUID line to fstab",
+correct_command = f'UUID={uuid} /mnt ext4 defaults 0 0',
+hint = f"Hint: Use 'UUID={uuid} /mnt ext4 defaults 0 0' to provide the UUID line.",
+command_output = ["If command is correct there won't be any output"],
+command_aspects = [f"\nUUID={uuid}: This part of the line specifies the  of the filesystem. In this context, {uuid} is a placeholder that would be replaced with the actual  name. When a filesystem is mounted using a , the system looks for a filesystem with that specific  and mounts it accordingly",
+f"\n{mount_point}: This part of the line specifies the mount point, which is the directory in the filesystem where the contents of the device will be accessible after it's mounted. In this case, the filesystem will be mounted at the {mount_point} directory",
+"\next4: This part specifies the filesystem type. It indicates that the filesystem being mounted is of type ext4. The filesystem type is important for the system to understand how to interpret and handle the data on the device",
+"\ndefaults: This part specifies the mount options. In this case, it specifies that the default mount options should be used. These options typically include settings for read-write access, permissions, and other parameters that control how the filesystem is mounted.",
+"\n0: This part specifies the dump option. The dump option is used by the dump utility to determine whether the filesystem needs to be backed up. A value of 0 indicates that the filesystem should not be backed up by default.",
+"\n0: This part specifies the fsck option. The fsck option is used by the fsck utility to determine the order in which filesystems should be checked during system boot. A value of 0 indicates that the filesystem should not be checked.",
+"\nOverall, this line is a configuration entry in the /etc/fstab file, which is used by the system to automatically mount filesystems during boot. It specifies the details of how a particular filesystem should be mounted, including its , mount point, filesystem type, mount options, and other parameters.",
+],
+command_options = ["",],
+intro_text = [f"Your quest begins with the discovery of the following UUID:\n {uuid}\n and the Mount point :\n {mount_point}\n",],
+outro_text = ["",],
+)
 
-        slow_validInput.print_slow(f"Your quest begins with the discovery of the following UUID:\n {correct_uuid}\n and the Mount point :\n {mount_point}\n")
 
-        while True:
-            user_line = input("Enter the line with the UUID,(type 'quit' or 'q' to exit): ")
-            print("\n")
-            if user_line.strip() in quit_commands:
-                print("Exiting the task. Farewell!")
-                return False
+mount_partition = CommandGenerator.CommandGenerator(
+action = "mount a partition",
+correct_command = "mount /dev/sdb1 /mnt",
+hint = "Hint: Use the 'mount' command to mount a partition. You can specify the mount point with '/mnt'. To mount all filesystems specified in fstab, use 'mount -a'.",
+command_output = ["mount: /dev/sdb1 mounted on /mnt",],
+command_aspects = [
+"mount: This is the command used to mount filesystems in Unix-like operating systems.",
+"dev/sdb1: This is the device file representing the partition or disk where the filesystem is located. In this case, /dev/sdb1 refers to the first partition on the second SCSI disk (/dev/sdb).",
+"/mnt: This is the mount point, which is a directory in the filesystem hierarchy where the contents of the device will be made accessible after mounting. In this case, /mnt is the directory where the filesystem from /dev/sdb1 will be attached.",
+],
+command_options = [
+"-o, --options: Specifies mount options, such as read-only (ro), read-write (rw), and others specific to each filesystem type. For example, -o ro mounts the filesystem as read-only.",
+"-L, --label: Mounts the filesystem by specifying the volume label.",
+"-a : Mounts all filesystems listed in the /etc/fstab",
+],
+intro_text = ["",],
+outro_text = ["",],
+)        
 
-            if user_line.strip() == correct_line:
-                slow_validInput.print_slow("Line is correct. UUID line provided successfully.")
-                print("Example:")
-                print("UUID=966cd40a-0aab-464b-b930-7909fefea8db /mnt ext4 defaults 0 0")
-                return True
-            else:
-                slow_validInput.print_slow("Line is incorrect. Try again.")
-                print(hint)
-                print("Example: UUID=966cd40a-0aab-464b-b930-7909fefea8db /mnt ext4 defaults 0 0")
-                print("Options: Additional options can be specified in the /etc/fstab file for mounting.")
-                print("Options: 'defaults' typically includes options for read/write access and other standard settings.")
-                print("         '0 0' specifies filesystem check and order of dumping.\n")
-                continue
-    except KeyboardInterrupt:
-        print("\nExiting the program due to user interruption (Ctrl+C). Farewell!")
-        return False
-    except Exception as e:
-        print("An error occurred:", e)
-        return False
-        
 
 
 def edit_fstab():
@@ -84,40 +82,3 @@ def edit_fstab():
         return False
 
 
-def mount_partition():
-    """
-    Prompt the user to mount a partition.
-    """
-    hint = "Hint: Use the 'mount' command to mount a partition. You can specify the mount point with '/mnt'. To mount all filesystems specified in fstab, use 'mount -a'."
-    quit_command = ["quit", "q"]
-
-    try:
-        slow_validInput.print_slow("\n\nAs you stand at the threshold of system integration, a pivotal moment awaits - the mounting of partitions."
-                                   "With each mount, disparate realms converge, ushering forth a unified system."
-                                   "The command 'mount' serves as your beacon in this journey, guiding you to new horizons.\n")
-        
-        while True:
-            mount_command = input("How would you mount a partition? ")
-
-            if mount_command.strip() in quit_command:
-                slow_validInput.print_slow("Exiting the task. Farewell!")
-                return False
-
-            if mount_command.strip() in ["mount /mnt", "mount -a"]:
-                slow_validInput.print_slow("Correct! The partition has been mounted.")
-                break
-            else:
-                slow_validInput.print_slow("Incorrect. " + hint)
-
-        # Additional examples and options
-        slow_validInput.print_slow("\nAdditional examples and options:")
-        slow_validInput.print_slow("- 'mount /dev/sdb1 /mnt': Mounts the partition /dev/sdb1 to the /mnt directory.")
-        slow_validInput.print_slow("- 'mount -o remount /mnt': Remounts the /mnt directory with the options specified in /etc/fstab.")
-        slow_validInput.print_slow("- 'mount -t ext4 /dev/sdc1 /data': Mounts the partition /dev/sdc1 to the /data directory with the ext4 filesystem type.")
-
-    except KeyboardInterrupt:
-        print("\nExiting the program due to user interruption (Ctrl+C). Farewell!")
-        return False
-    except Exception as e:
-        print("An error occurred:", e)
-        return False

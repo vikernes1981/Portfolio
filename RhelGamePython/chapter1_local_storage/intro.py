@@ -29,5 +29,3 @@ def start_game():
     except KeyboardInterrupt:
         print("\nGame interrupted. Exiting...")
         exit()
-
-start_game()
