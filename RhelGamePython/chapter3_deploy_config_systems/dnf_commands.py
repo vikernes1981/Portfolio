@@ -483,3 +483,105 @@ command_options =
 intro_text = ['',],
 outro_text = ['',],
 )
+
+redo_history = CommandGenerator.CommandGenerator(
+action = 'redo a particular action',
+correct_command = 'dnf history redo 1',
+hint = 'Hint: Use "dnf history redo 1" to re-do a particular action',
+command_output = 
+[
+"""
+# dnf history redo 1
+Last metadata expiration check: 0:08:15 ago on Tue 01 Mar 2024 09:24:52 PM UTC.
+Dependencies resolved.
+============================================================================================================
+ Package                         Arch             Version                    Repository                Size
+============================================================================================================
+Installing:
+ htop                            x86_64           3.1.1-2.fc34               updates                  131 k
+
+Transaction Summary
+============================================================================================================
+Install  1 Package
+
+Total download size: 131 k
+Installed size: 316 k
+Is this ok [y/N]: y
+Downloading Packages:
+htop-3.1.1-2.fc34.x86_64.rpm                                      138 kB/s | 131 kB     00:00    
+------------------------------------------------------------------------------------------------------------
+Total                                                                                   117 kB/s | 131 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                    1/1 
+  Installing       : htop-3.1.1-2.fc34.x86_64                                                          1/1 
+  Running scriptlet: htop-3.1.1-2.fc34.x86_64                                                          1/1 
+  Verifying        : htop-3.1.1-2.fc34.x86_64                                                          1/1 
+
+Installed:
+  htop-3.1.1-2.fc34.x86_64                                                                                 
+
+Complete!
+""",
+],
+command_aspects = 
+[
+"""
+- dnf: This is the package manager used in Fedora and other Red Hat-based Linux distributions. It stands for "Dandified Yum," which was the predecessor to DNF.
+- history: This sub-command is used to view and manage the history of transactions (installations, updates, removals, etc.) performed by DNF. It allows you to see what changes have been made to the system via package management.
+- redo: This action allows you to redo a specific transaction from the history. In this case, we're redoing transaction number 1. Redoing a transaction means repeating the actions that were performed during that transaction.
+- 1: This is the transaction number. In the history list, each transaction has a unique number associated with it. We're specifying here that we want to redo transaction number 1.
+""",
+],
+command_options = 
+[
+"""
+-h, --help       Show this help message and exit
+-y, --assumeyes  Automatic yes to confirmation prompts
+-q, --quiet      Do not print informational messages
+""",
+],
+intro_text = ['',],
+outro_text = ['',],
+)
+
+
+undo_history = CommandGenerator.CommandGenerator(
+action = 'undo  a particular action',
+correct_command = 'dnf history undo 1',
+hint = 'Hint: Use "dnf history undo 1" to undo a particular action',
+command_output = 
+[
+"""
+# dnf history undo 1
+Undoing transaction 1, from Tue 01 Mar 2024 09:00:00 PM UTC
+Removed:
+  htop.x86_64 3.1.1-2.fc34
+Transaction successfully undone.
+""",
+],
+command_aspects = 
+[
+"""
+- dnf: This is the command-line package manager used in Fedora and other Linux distributions based on the Red Hat ecosystem. It stands for "Dandified Yum," which was a predecessor to DNF.
+- history: This is a sub-command of dnf that deals specifically with viewing and managing the history of transactions performed by DNF. It allows users to see a chronological list of changes made to the system via package installations, updates, removals, etc.
+- undo: This is an action performed on a specific transaction listed in the history. When you use undo, you are instructing DNF to revert the changes made during a particular transaction.
+- 1: This number specifies the transaction ID you want to undo. Each transaction listed in the history has a unique ID associated with it. In this case, 1 refers to the first transaction in the history list.
+""",
+],
+command_options = 
+[
+"""
+-h, --help: Displays the help message for the dnf history undo command, listing its options and usage instructions.
+-y, --assumeyes: Automatically answers "yes" to any confirmation prompts, allowing the command to proceed without requiring manual confirmation for each action.
+-q, --quiet: Suppresses informational messages, reducing the output verbosity of the command.
+""",
+],
+intro_text = ['',],
+outro_text = ['',],
+)
+
+
