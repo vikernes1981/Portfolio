@@ -7,7 +7,7 @@ def challenge_1():
         """
         First challenge: System Boot Configuration Phase
         """
-        try:
+       # try:
                 slow_validInput.print_slow("\n\nChallenge 1: System Boot Configuration Phase\n\n")
 
                 slow_validInput.print_slow("To ensure seamless operation, Olivia configures the systems to boot into a specific target automatically.")

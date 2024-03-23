@@ -1,9 +1,10 @@
 import time
 
+
 def print_slow(text):
     """
     Print text slowly for better storytelling.
-    
+
     Args:
     text (str): The text to be printed slowly.
     """
@@ -12,14 +13,15 @@ def print_slow(text):
         time.sleep(0.002)
     print()
 
+
 def get_valid_input(prompt, valid_choices):
     """
     Get valid input from the user.
-    
+
     Args:
     prompt (str): The prompt to be displayed to the user.
     valid_choices (list): A list of valid choices.
-    
+
     Returns:
     str: The user's valid choice.
     """

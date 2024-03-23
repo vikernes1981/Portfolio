@@ -1,12 +1,11 @@
 import CommandGenerator
 
 module_list = CommandGenerator.CommandGenerator(
-action = 'list all the currently available modules',
-correct_command = 'dnf module list',
-hint = 'Hint: Use "dnf module list" to list all the currently available modules',
-command_output = 
-[
-"""
+    action='list all the currently available modules',
+    correct_command='dnf module list',
+    hint='Hint: Use "dnf module list" to list all the currently available modules',
+    command_output=[
+        """
 $ dnf module list
 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)
 Name              Stream        Profiles              Summary
@@ -31,18 +30,16 @@ httpd             2.4 [d]       common [d]            Apache HTTP Server
                    2.4 [d]       minimal [n]           Apache HTTP Server
 
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
 - dnf: Stands for Dandified Yum, a package manager used in various Linux distributions, including Red Hat Enterprise Linux.
 - module: This subcommand is used to interact with modular content in the package manager. Modules provide alternative versions of software packages with different lifecycles and support policies.
 - list: This is an argument for the module subcommand, instructing it to list available modules.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
     -h, --help: Displays a help message, listing available options and usage information.
     --all: Lists all available modules, including those that are not enabled by default.
     --enabled: Lists only enabled modules.
@@ -56,24 +53,23 @@ command_options =
     --show-profiles: Displays available profiles for each module.
     --show-platform: Displays available platform identifiers for each module.
 """
-],
-intro_text = [
-"""
+    ],
+    intro_text=[
+        """
 Modules allow you to install specific versions of a application, a good example of this would be the PHP application.
 The PHP application is available in the modules stream with multiple versions and editions,
 this allows you to select and install the specific version that is required
 """,],
-outro_text = ['',],
+    outro_text=['',],
 )
 
 
 module_info = CommandGenerator.CommandGenerator(
-action = 'list information about a specific module',
-correct_command = 'dnf module info php',
-hint = 'Hint: Use "dnf module info php" to list information about a specific module',
-command_output = 
-[
-"""
+    action='list information about a specific module',
+    correct_command='dnf module info php',
+    hint='Hint: Use "dnf module info php" to list information about a specific module',
+    command_output=[
+        """
 $ dnf module info php
 
 Name          : php
@@ -87,38 +83,35 @@ Repositories  : rhel-8-for-x86_64-appstream-rpms
 Summary       : PHP scripting language
 Description   : PHP is an HTML-embedded scripting language commonly used for web development.
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
 - dnf: This is the Dandified Yum package manager used in various Linux distributions, including Red Hat Enterprise Linux.
 - module: This subcommand is used to interact with modular content in the package manager. Modules provide alternative versions of software packages with different lifecycles and support policies.
 - info: This is an argument for the module subcommand, instructing it to display detailed information about a specific module.
 - php: This is the name of the module you want to get information about. In this case, it's the PHP module, which is used for server-side scripting.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
  --profile=<profile>: Provides information about a specific profile of the module. For example, dnf module info php --profile=common will give information about the common profile of the PHP module.
  --stream=<stream>: Specifies a specific stream of the module for which to retrieve information. For example, dnf module info php --stream=7.4 will give information about the PHP module in stream version 7.4.
  --verbose: Provides more detailed output, including additional information about the module.
  --quiet: Suppresses informational messages and only displays essential output.
  --refresh: Refreshes module metadata before displaying information about the module.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 module_install = CommandGenerator.CommandGenerator(
-action = 'install a module',
-correct_command = 'dnf module install php',
-hint = 'Hint: Use "dnf module install php" to install a module',
-command_output = 
-[
-"""
+    action='install a module',
+    correct_command='dnf module install php',
+    hint='Hint: Use "dnf module install php" to install a module',
+    command_output=[
+        """
 $ sudo dnf module install php
 Updating Subscription Management repositories.
 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)                                                                                                                                                             0.0  B/s |   0  B     00:00    
@@ -170,19 +163,17 @@ Running transaction
 Installed products updated.
 Complete!
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
 - dnf: Stands for Dandified Yum, a package manager used in various Linux distributions, including Red Hat Enterprise Linux.
 - module: This subcommand is used to interact with modular content in the package manager. Modules provide alternative versions of software packages with different lifecycles and support policies.
 - install: This is an argument for the module subcommand, instructing it to install the specified module.
 - php: This is the name of the module you want to install. In this case, it's the PHP module, which is used for server-side scripting.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
   -h, --help: Displays a help message, listing available options and usage information.
   --allowerasing: Allows dnf to remove installed packages to satisfy dependencies during installation.
   --assumeno, --assumeyes: These options answer 'no' or 'yes' respectively to all questions asked by dnf. For automated installations, --assumeyes can be useful.
@@ -196,19 +187,18 @@ command_options =
   --verbose: Enables verbose output, showing more detailed information about the installation process.
   --releasever=<release_version>: Specifies a release version to use when installing packages.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 module_remove = CommandGenerator.CommandGenerator(
-action = 'remove a module',
-correct_command = 'dnf module remove php',
-hint = 'Hint: Use "dnf module remove php" to remove a module',
-command_output = 
-[
-"""
+    action='remove a module',
+    correct_command='dnf module remove php',
+    hint='Hint: Use "dnf module remove php" to remove a module',
+    command_output=[
+        """
 $ sudo dnf module remove php
 Updating Subscription Management repositories.
 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)                                                                                                                                                             0.0  B/s |   0  B     00:00    
@@ -253,19 +243,17 @@ Running transaction
 Removed products updated.
 Complete!
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  dnf: Stands for Dandified Yum, a package manager used in various Linux distributions, including Red Hat Enterprise Linux.
  module: This subcommand is used to interact with modular content in the package manager. Modules provide alternative versions of software packages with different lifecycles and support policies.
  remove: This is an argument for the module subcommand, instructing it to remove the specified module.
  php: This is the name of the module you want to remove. In this case, it's the PHP module, which is used for server-side scripting.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - -h, --help: Displays a help message, listing available options and usage information.
 - --allowerasing: Allows dnf to remove installed packages to satisfy dependencies during removal.
 - --assumeno, --assumeyes: These options answer 'no' or 'yes' respectively to all questions asked by dnf. For automated removals, --assumeyes can be useful.
@@ -279,19 +267,18 @@ command_options =
 - --verbose: Enables verbose output, showing more detailed information about the removal process.
 - --releasever=<release_version>: Specifies a release version to use when removing packages.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 module_reset = CommandGenerator.CommandGenerator(
-action = 'reset the module post removal (if you would like to install a different version)',
-correct_command = 'dnf module reset php',
-hint = 'Hint: Use "dnf module reset php" to reset the module post removal',
-command_output = 
-[
-"""
+    action='reset the module post removal (if you would like to install a different version)',
+    correct_command='dnf module reset php',
+    hint='Hint: Use "dnf module reset php" to reset the module post removal',
+    command_output=[
+        """
 $ sudo dnf module reset php
 Updating Subscription Management repositories.
 Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)                                                                                                                                                             0.0  B/s |   0  B     00:00    
@@ -337,19 +324,17 @@ Running transaction
 Resetting products updated.
 Complete!
 """
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  dnf: Stands for Dandified Yum, a package manager used in various Linux distributions, including Red Hat Enterprise Linux.
  module: This subcommand is used to interact with modular content in the package manager. Modules provide alternative versions of software packages with different lifecycles and support policies.
  reset: This is an argument for the module subcommand, instructing it to reset the specified module.
  php: This is the name of the module you want to reset. In this case, it's the PHP module, which is used for server-side scripting.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - -h, --help: Displays a help message, listing available options and usage information.
 - --allowerasing: Allows dnf to remove installed packages to satisfy dependencies during reset.
 - --assumeno, --assumeyes: These options answer 'no' or 'yes' respectively to all questions asked by dnf. For automated resets, --assumeyes can be useful.
@@ -361,9 +346,7 @@ command_options =
 - --verbose: Enables verbose output, showing more detailed information about the reset process.
 - --releasever=<release_version>: Specifies a release version to use when resetting modules.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
-
-

@@ -23,32 +23,32 @@ As you navigate through the digital landscape, the urgency of the mission weighs
 Every command you execute, every diagnostic tool you deploy, is a step towards ensuring the survival of humanity in the digital age.
 The fate of countless lives rests on your shoulders, and failure is not an option.""",
     options=[
-{
-'name': 'List Disk Space', 
-'action': "You initiate the process to list disk space, a crucial step in understanding the resources available in this digital domain.",
-'function': partitions_filesystem.check_disk_space_command.execute, 
-'success_message': 'Disk space listed'
- },
+        {
+            'name': 'List Disk Space',
+            'action': "You initiate the process to list disk space, a crucial step in understanding the resources available in this digital domain.",
+            'function': partitions_filesystem.check_disk_space_command.execute,
+            'success_message': 'Disk space listed'
+        },
 
-{
-'name': 'Get UUIDs',
-'action': "With determination, you delve into the depths of the system, seeking to retrieve the UUIDs of the disks.",
-'function': partitions_filesystem.check_uuid_command,
-'success_message': 'UUIDs retrieved'
-},
+        {
+            'name': 'Get UUIDs',
+            'action': "With determination, you delve into the depths of the system, seeking to retrieve the UUIDs of the disks.",
+            'function': partitions_filesystem.check_uuid_command,
+            'success_message': 'UUIDs retrieved'
+        },
 
-{
-'name': 'List Disks and Partitions',
-'action': "You navigate the intricate web of disks and partitions, unraveling their secrets one by one.",
-'function': partitions_filesystem.check_disks_partitions_command.execute,
-'success_message': 'Disks and partitions listed'
-},
+        {
+            'name': 'List Disks and Partitions',
+            'action': "You navigate the intricate web of disks and partitions, unraveling their secrets one by one.",
+            'function': partitions_filesystem.check_disks_partitions_command.execute,
+            'success_message': 'Disks and partitions listed'
+        },
 
-{
-'name': 'Force Partition Check', 
-'action': "With unwavering resolve, you command a forceful partition check, ensuring the stability of the digital landscape.",
-'function': partitions_filesystem.check_force_partition_check_command.execute,
-'success_message': 'Partition check forced'
-}
-]
+        {
+            'name': 'Force Partition Check',
+            'action': "With unwavering resolve, you command a forceful partition check, ensuring the stability of the digital landscape.",
+            'function': partitions_filesystem.check_force_partition_check_command.execute,
+            'success_message': 'Partition check forced'
+        }
+    ]
 )

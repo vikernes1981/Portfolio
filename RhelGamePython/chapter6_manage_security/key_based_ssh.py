@@ -1,14 +1,12 @@
 import CommandGenerator
 
 
-
 ssh_keygen = CommandGenerator.CommandGenerator(
-action = 'generate public/private keys and .ssh dir',
-correct_command = 'ssh-keygen',
-hint = 'Hint: Use "ssh-keygen" to generate public/private keys and .ssh dir',
-command_output = 
-[
-"""
+    action='generate public/private keys and .ssh dir',
+    correct_command='ssh-keygen',
+    hint='Hint: Use "ssh-keygen" to generate public/private keys and .ssh dir',
+    command_output=[
+        """
 $ ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/user/.ssh/id_rsa):
@@ -31,16 +29,14 @@ The key's randomart image is:
 |                 |
 +----[SHA256]-----+
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  ssh-keygen primarily generates pairs of public and private SSH keys for authentication. These keys come in different types, commonly RSA and DSA.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - -t: Specifies the type of key to create (e.g., rsa, dsa, ecdsa, ed25519).
 - -b: Specifies the number of bits in the key. For RSA keys, the default is 2048 bits.
 - -f: Specifies the filename of the generated key file.
@@ -50,19 +46,18 @@ command_options =
 - -A: Forces creation of key files for all authentication methods (generally for the server).
 - -B: Show the bubblebabble digest of the key file.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 ssh_copy_id = CommandGenerator.CommandGenerator(
-action = 'copy your key to target user',
-correct_command = 'ssh-copy-id user@hostname',
-hint = 'Hint: Use "ssh-copy-id user@hostname" to copy your key to target user',
-command_output = 
-[
-"""
+    action='copy your key to target user',
+    correct_command='ssh-copy-id user@hostname',
+    hint='Hint: Use "ssh-copy-id user@hostname" to copy your key to target user',
+    command_output=[
+        """
 $ ssh-copy-id user@hostname
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/user/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -74,37 +69,34 @@ Number of key(s) added: 1
 Now try logging into the machine, with:   "ssh 'user@hostname'"
 and check to make sure that only the key(s) you wanted were added.
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  ssh-copy-id: This is the command itself, used for copying SSH public keys to a remote host.
  user@hostname: This part of the command specifies the target user (username)
  and the hostname or IP address of the remote server (remote-host). This is where you want to copy your SSH public key.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - -i identity_file: This option specifies the identity file (private key) to use for authentication. If not specified, it uses the default identity file, usually ~/.ssh/id_rsa.
 - -p port: Specifies the port number to connect to on the remote host. If not specified, it defaults to port 22.
 - -f: Forces the copying of the key without trying to check if it's already present in the authorized_keys file. This can be useful for automation scripts, but be cautious as it might overwrite existing keys.
 - -h: Suppresses the display of the usage message.
 - -n: Dry run mode. Doesn't actually copy the key but shows what would be done.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 ssh_resume = CommandGenerator.CommandGenerator(
-action = 'sum up of the procedure',
-correct_command = '',
-hint = 'Hint: Use "Enter" to continue',
-command_output = 
-[
-"""
+    action='sum up of the procedure',
+    correct_command='',
+    hint='Hint: Use "Enter" to continue',
+    command_output=[
+        """
 1) Generate SSH Key Pair:
      Use a tool like ssh-keygen on your local machine to generate an SSH key pair. This typically involves running a command that generates a public key and a private key.
 
@@ -125,10 +117,9 @@ command_output =
 
 By following these steps, you'll effectively configure key-based authentication for SSH, enhancing the security of your remote server access.
 """,
-],
-command_aspects = ['',],
-command_options = ['',],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    command_aspects=['',],
+    command_options=['',],
+    intro_text=['',],
+    outro_text=['',],
 )
-

@@ -2,12 +2,11 @@ import CommandGenerator
 
 
 nmcli_device = CommandGenerator.CommandGenerator(
-action = 'list all available network devices',
-correct_command = 'nmcli device show',
-hint = 'Hint: Use "nmcli device show" to list all available network devices',
-command_output = 
-[
-"""
+    action='list all available network devices',
+    correct_command='nmcli device show',
+    hint='Hint: Use "nmcli device show" to list all available network devices',
+    command_output=[
+        """
 GENERAL.DEVICE: wlan0
 GENERAL.TYPE: wifi
 GENERAL.HWADDR: 12:34:56:78:9A:BC
@@ -26,18 +25,16 @@ GENERAL.HWADDR: 12:34:56:78:9A:BD
 GENERAL.MTU: 1500
 GENERAL.STATE: disconnected
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  nmcli: This is the command-line tool used to interact with NetworkManager, which is a network management daemon for Linux.
  device: This is a subcommand of nmcli used to manage network devices.
  show: This is an option or argument provided to the device subcommand, indicating that we want to display information about network devices.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - show: Displays detailed information about network devices, including their names, types, states, IP addresses, and connection statuses.
 - status: Shows the status of all network devices, indicating whether they are connected or disconnected.
 - reapply: Reapplies the current connection configuration to the specified device. Useful for applying changes or troubleshooting network connections.
@@ -49,34 +46,31 @@ command_options =
 - monitor: Monitors state changes of network devices in real-time, providing updates on connection status changes or network events.
 - show-long: Displays detailed information about network devices, providing more comprehensive output compared to the standard "show" option.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 nmcli_connection = CommandGenerator.CommandGenerator(
-action = 'list all available connections',
-correct_command = 'nmcli connection show',
-hint = 'Hint: Use "nmcli connection show" to list all available connections',
-command_output = 
-[
-"""
+    action='list all available connections',
+    correct_command='nmcli connection show',
+    hint='Hint: Use "nmcli connection show" to list all available connections',
+    command_output=[
+        """
 NAME                UUID                                  TYPE      DEVICE  
 Wired connection 1  01234567-89ab-cdef-0123-456789abcdef  ethernet  eth0    
 Wi-Fi connection    98765432-fedc-ba98-7654-3210fedcba98  wifi      wlan0   
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  nmcli: This is the command-line tool used to interact with NetworkManager, the network management daemon for Linux.
  connection: This is a subcommand of nmcli used to manage network connections.
  show: This is an option or argument provided to the connection subcommand, indicating that we want to display information about network connections.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - add: Adds a new connection.
 	# nmcli connection add con-name eth0 ifname enp0s8 type ethernet ip4 10.0.2.16/24 gw4 10.0.2.2
 - modify: Modifies an existing connection.
@@ -98,11 +92,10 @@ command_options =
 - export: Exports connections to a file.
 - import: Imports connections from a file.
 """,
-"""
+        """
 The same commands apply for ipv6
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
-

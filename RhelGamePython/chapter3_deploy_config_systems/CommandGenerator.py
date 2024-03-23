@@ -1,5 +1,6 @@
 import slow_validInput
 
+
 class CommandGenerator:
     def __init__(self, action, correct_command, command_aspects, hint, intro_text=[], outro_text=[], command_options=None, command_output=None):
         self.action = action
@@ -15,7 +16,8 @@ class CommandGenerator:
         try:
             slow_validInput.print_slow(self.intro_text[0])
             while True:
-                user_input = input(f"Enter the command to {self.action} or type 'quit/q' to exit: ").strip()
+                user_input = input(
+                    f"Enter the command to {self.action} or type 'quit/q' to exit: ").strip()
                 if user_input.lower() in ['quit', 'q']:
                     print("Exiting the program. Goodbye!")
                     return False

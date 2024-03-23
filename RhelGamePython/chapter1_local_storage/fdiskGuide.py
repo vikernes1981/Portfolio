@@ -24,6 +24,7 @@ def fdisk_guide():
     print("As you traverse the digital realm, you encounter numerous obstacles, each requiring mastery over fdisk.")
     print("Fear not, for I shall guide you through the arcane rituals of partition creation and destruction.\n")
 
+
 def create_dos_partition_guide():
     print("To carve out a new DOS partition from the void, follow these steps:\n")
     print("1. Invoke the ancient rites of fdisk by typing: fdisk /dev/sdX (replace sdX with the appropriate drive letter)")
@@ -43,7 +44,8 @@ def create_dos_partition_guide():
     print("Select (default p): p\n")
     print("Partition number (1-4, default 1): 1\n")
     print("First sector (2048-488279551, default 2048): 2048\n")
-    print("Last sector, +sectors or +size{K,M,G} (2048-488279551, default 488279551): +100M\n")
+    print(
+        "Last sector, +sectors or +size{K,M,G} (2048-488279551, default 488279551): +100M\n")
     print("\nCommand (m for help): t\n")
     print("Selected partition 1")
     print("Hex code (type L to list codes): 7\n")
@@ -53,6 +55,7 @@ def create_dos_partition_guide():
     print("$ fdisk /dev/sda\n")
     print("As you traverse the digital wilderness, you encounter new challenges, each requiring mastery over fdisk.")
     print("But fret not, for with each step, you draw closer to becoming a true master of partitioning.\n")
+
 
 def create_lvm_partition_guide():
     print("To craft a new partition in the likeness of LVM, follow these steps:\n")
@@ -73,7 +76,8 @@ def create_lvm_partition_guide():
     print("Select (default p): p\n")
     print("Partition number (1-4, default 1): 1\n")
     print("First sector (2048-488279551, default 2048): 2048\n")
-    print("Last sector, +sectors or +size{K,M,G} (2048-488279551, default 488279551): +1G\n")
+    print(
+        "Last sector, +sectors or +size{K,M,G} (2048-488279551, default 488279551): +1G\n")
     print("\nCommand (m for help): t\n")
     print("Selected partition 1")
     print("Hex code (type L to list codes): 8e\n")
@@ -83,6 +87,7 @@ def create_lvm_partition_guide():
     print("$ fdisk /dev/sda\n")
     print("As you journey through the digital labyrinth, each step brings you closer to mastery over fdisk.")
     print("Let not the challenges deter you, for with every partition created, your legend grows.\n")
+
 
 def create_swap_partition_guide():
     print("Amidst your sojourn in the digital wilderness, you chance upon the realm of swap,")
@@ -105,7 +110,8 @@ def create_swap_partition_guide():
     print("Select (default p): p\n")
     print("Partition number (1-4, default 1): 1\n")
     print("First sector (2048-488279551, default 2048): 2048\n")
-    print("Last sector, +sectors or +size{K,M,G} (2048-488279551, default 488279551): +2G\n")
+    print(
+        "Last sector, +sectors or +size{K,M,G} (2048-488279551, default 488279551): +2G\n")
     print("\nCommand (m for help): t\n")
     print("Selected partition 1")
     print("Hex code (type L to list codes): 82\n")
@@ -115,6 +121,7 @@ def create_swap_partition_guide():
     print("$ fdisk /dev/sda\n")
     print("As you delve deeper into the digital realm, each command you wield shapes the fabric of the partitioned universe.")
     print("May your creations serve you well in the journey ahead.\n")
+
 
 def delete_partition_guide():
     print("In your voyage through the digital expanse, you encounter partitions long past their prime,")
@@ -138,4 +145,3 @@ def delete_partition_guide():
 
     print("\n\nAs you traverse the digital realm, you encounter numerous obstacles, each requiring mastery over fdisk.")
     print("Fear not, for I shall guide you through the arcane rituals of partition creation and destruction.\n")
-

@@ -1,28 +1,25 @@
 import CommandGenerator
 
 grub2_list = CommandGenerator.CommandGenerator(
-action = 'list the environment options for modification for grub',
-correct_command = 'grub2-editenv list',
-hint = 'Hint: Use "grub2-editenv list" to list the environment options for modification for grub.',
-command_output = 
-[
-"""
+    action='list the environment options for modification for grub',
+    correct_command='grub2-editenv list',
+    hint='Hint: Use "grub2-editenv list" to list the environment options for modification for grub.',
+    command_output=[
+        """
 saved_entry=e68408dd5cce4d3ca61789657a786401-5.14.0-362.18.1.el9_3.x86_64
 menu_auto_hide=1
 boot_success=0
 boot_indeterminate=0
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
 - grub2-editenv: This is the command-line tool used to manage GRUB 2's environment block. It allows you to view, modify, or reset variables stored in the environment block.
 - list: This is an argument passed to the grub2-editenv command, specifying that you want to list the current values of all variables in the environment block.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
   -h, --help            display this help and exit
   -V, --version         output version information and exit
   -v, --verbose         print verbose messages
@@ -35,33 +32,30 @@ command_options =
 
 For more details, see grub2-editenv(1).
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 grub2_set_default = CommandGenerator.CommandGenerator(
-action = 'set the current kernel as the default for boot',
-correct_command = 'grub2-set-default 0',
-hint = 'Hint: Use "grub2-set-default 0" to set the current kernel as the default for boot',
-command_output = 
-[
-"""
+    action='set the current kernel as the default for boot',
+    correct_command='grub2-set-default 0',
+    hint='Hint: Use "grub2-set-default 0" to set the current kernel as the default for boot',
+    command_output=[
+        """
 This command doesn't typically produce any output unless there is an error.
 It simply sets the default boot entry to the specified index (in this case, 0)
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
     grub2-set-default: This is the command used to set the default boot entry in the GRUB bootloader.
     0: This is the argument passed to the grub2-set-default command, specifying the index of the boot entry you want to set as the default.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
   -h, --help              display this help and exit
   -V, --version           output version information and exit
   -v, --verbose           increase verbosity
@@ -75,18 +69,17 @@ command_options =
 For more details, see grub2-set-default(8).
 
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 grub2_mkconfig = CommandGenerator.CommandGenerator(
-action = 'view, modify and the apply configuration for entire grub configuration of your system',
-correct_command = 'grub2-mkconfig -o /boot/grub2/grub.cfg',
-hint = 'Hint: Use "grub2-mkconfig -o /boot/grub2/grub.cfg" to apply modifications on grub',
-command_output = 
-[
-"""
+    action='view, modify and the apply configuration for entire grub configuration of your system',
+    correct_command='grub2-mkconfig -o /boot/grub2/grub.cfg',
+    hint='Hint: Use "grub2-mkconfig -o /boot/grub2/grub.cfg" to apply modifications on grub',
+    command_output=[
+        """
 IMPORTANT NOTICE
 -----------------
 
@@ -130,7 +123,7 @@ bash
 
 That's it! You've successfully modified the GRUB configuration on your Red Hat system. Remember to exercise caution when editing configuration files to avoid causing issues with system booting. It's always a good practice to create a backup of the original configuration file before making any changes.
 """,
-"""
+        """
 Generating grub configuration file ...
 Found linux image: /boot/vmlinuz-4.18.0-305.el8.x86_64
 Found initrd image: /boot/initramfs-4.18.0-305.el8.x86_64.img
@@ -139,17 +132,15 @@ Found initrd image: /boot/initramfs-4.18.0-240.el8.x86_64.img
 Found CentOS Linux release 8.5.2111 on /dev/sda1
 done
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  grub2-mkconfig: This command generates a new GRUB configuration file based on the configuration files present in /etc/grub.d/ and the settings specified in /etc/default/grub. It scans for available operating systems and kernel images on the system and creates entries for them in the configuration file.
  -o /boot/grub2/grub.cfg: This option specifies the output file for the generated GRUB configuration. The -o flag followed by the file path (/boot/grub2/grub.cfg) indicates that the generated configuration will be saved to the specified file. In this case, it's /boot/grub2/grub.cfg, which is the default location for the GRUB configuration file on many Linux distributions, including Red Hat-based systems.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 Usage: grub2-mkconfig [OPTION...]
 Generate grub config file.
 
@@ -160,18 +151,17 @@ Generate grub config file.
   --version                  print version information and exit
   --help                     display this help and exit
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 grubby_install = CommandGenerator.CommandGenerator(
-action = 'install grubby',
-correct_command = 'dnf install grubby',
-hint = 'Hint: Use "dnf install grubby" to install grubby',
-command_output = 
-[
-"""
+    action='install grubby',
+    correct_command='dnf install grubby',
+    hint='Hint: Use "dnf install grubby" to install grubby',
+    command_output=[
+        """
 $ sudo dnf install grubby
 [sudo] password for user:
 Last metadata expiration check: <timestamp>
@@ -192,23 +182,21 @@ Is this ok [y/N]: y
 Downloading Packages:
 <Downloading progress...>
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
 - dnf: This is the package manager used in Fedora and other Red Hat-based Linux distributions. It stands for "Dandified Yum", and it's used for installing, updating, and removing software packages on the system.
 - install: This is the subcommand of dnf used to install packages. When you specify install, you're telling dnf that you want to install the specified package(s).
 - grubby: This is the name of the package you want to install. In this case, you're installing the grubby package, which is a tool used to manipulate the GRUB (GRand Unified Bootloader) configuration on Fedora and Red Hat-based Linux systems.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
   -y, --assumeyes: Automatically answer "yes" to all prompts. This can be useful for scripting or when you want to install packages without interactive confirmation.
   --nobest: Don't install the "best" package version. By default, DNF installs the highest available version of a package. This option disables that behavior.
   --allowerasing: Allow DNF to remove packages to satisfy dependencies. This can be useful if a package conflicts with others that are already installed.
 """,
-"""
+        """
 HERE ARE GRUBBY OPTIONS
 ------------------------
 
@@ -244,7 +232,7 @@ Usage: grubby [OPTION...]
 -v --verbose
      Verbose output
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )

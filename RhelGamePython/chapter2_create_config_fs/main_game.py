@@ -20,9 +20,11 @@ def main():
         challenge4.manage_filesystems()
         challenge5.manage_permissions()
         bash_script.write_advanced_bash_script()
-        outro.end_game() # Display the conclusion after completing all challenges.
+        # Display the conclusion after completing all challenges.
+        outro.end_game()
     except Exception as e:
         print("An error occurred during the game:", e)
+
 
 if __name__ == "__main__":
     main()

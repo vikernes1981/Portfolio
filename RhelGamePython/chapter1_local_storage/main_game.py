@@ -10,7 +10,6 @@ import outro
 import ChallengeGenerator
 
 
-
 def main():
     """
     Main function to run the game.
@@ -24,9 +23,11 @@ def main():
         challenge5.challenge_5.execute()
         challenge6.challenge_6 .execute()
         challenge7.challenge_7.execute()
-        outro.conclusion()  # Display the conclusion after completing all challenges.
+        # Display the conclusion after completing all challenges.
+        outro.conclusion()
     except Exception as e:
         print("An error occurred during the game:", e)
+
 
 if __name__ == "__main__":
     main()

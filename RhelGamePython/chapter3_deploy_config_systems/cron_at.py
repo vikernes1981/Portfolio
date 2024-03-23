@@ -2,12 +2,11 @@ import CommandGenerator
 
 
 at_install = CommandGenerator.CommandGenerator(
-action = 'install at',
-correct_command = 'dnf install at',
-hint = 'Hint: Use "dnf install at" to install at package',
-command_output = 
-[
-"""
+    action='install at',
+    correct_command='dnf install at',
+    hint='Hint: Use "dnf install at" to install at package',
+    command_output=[
+        """
 Last metadata expiration check: <timestamp>
 Dependencies resolved.
 ===============================================================================================================================================================
@@ -24,35 +23,32 @@ Total download size: 121 k
 Installed size: 282 k
 Is this ok [y/N]: 
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  dnf: This is the package manager for the DNF (Dandified YUM) package management system. It's used primarily in Linux distributions such as Fedora, CentOS, and RHEL (Red Hat Enterprise Linux) to install, update, and remove packages.
  install: This is a subcommand of dnf used to install packages. When you specify install, dnf knows that you want to install a package or packages.
  at: This is the package name that you want to install. In this case, it refers to the at package, which is a utility used to schedule commands or scripts to be executed at a later time.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 Schedule a command to run at a specific time: echo "echo 'Hello, World!'" | at 10:00
 Using a script with at: echo "/path/to/script.sh" | at 12:00 2024-03-16
 View scheduled jobs: atq
 Remove a scheduled job: atrm 1
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 crontab = CommandGenerator.CommandGenerator(
-action = 'edit crontab',
-correct_command = 'crontab -e',
-hint = 'Hint: Use "crontab -e" to edit crontab',
-command_output = 
-[
-"""
+    action='edit crontab',
+    correct_command='crontab -e',
+    hint='Hint: Use "crontab -e" to edit crontab',
+    command_output=[
+        """
 # Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
@@ -78,17 +74,15 @@ command_output =
 # m h  dom mon dow   command
 
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  crontab: This is the command-line utility used to manage cron jobs on Unix-like operating systems. "Cron" is a time-based job scheduler in Unix-like operating systems, and crontab is used to create, modify, and delete cron job schedules.
  -e: This option tells the crontab command to open the user's crontab file in a text editor for editing. The default text editor used is typically defined by the EDITOR environment variable.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - -e: Edit the current user's crontab file. This option opens the default text editor to edit the cron jobs.
 - -l: List the current user's cron jobs. This option displays the contents of the user's crontab file.
 - -r: Remove the current user's crontab file. This option deletes all cron jobs for the current user.
@@ -97,7 +91,7 @@ command_options =
 - -c file: Specify a different file to use instead of the default crontab file for editing, listing, or removing.
 - -s: Display the cron daemon's version and the system's crontab directory.
 """,
-"""
+        """
 **The crontab entries are of the form:**
 
 **Minutes Hours Date Month Day-of-Week command**
@@ -115,7 +109,7 @@ Other special characters can be used:**
 - A list of values separated by commas (,) specifies a list.
 - A forward slash (/) can be used to specify step values.
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )

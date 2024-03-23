@@ -1,28 +1,25 @@
-import CommandGenerator 
+import CommandGenerator
 
 
 ### Na ta spase se perissotera functions!? ###
 
 firewall_cmd_state = CommandGenerator.CommandGenerator(
-action = 'display the current state of the firewall',
-correct_command = 'firewall-cmd --state',
-hint = 'Hint: Use "firewall-cmd --state" to display the current state of the firewall',
-command_output = 
-[
-"""
+    action='display the current state of the firewall',
+    correct_command='firewall-cmd --state',
+    hint='Hint: Use "firewall-cmd --state" to display the current state of the firewall',
+    command_output=[
+        """
 running
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  firewall-cmd: This is the command-line tool used to interact with the firewalld firewall management service on Linux systems.
  --state: This is an option provided to the firewall-cmd command, indicating that we want to check the current state of the firewall.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - --state: Displays the current state of the firewall.
 - --list-all: Lists all rules and zones currently configured.
 - --get-default-zone: Displays the default zone.
@@ -42,34 +39,31 @@ command_options =
 - --reload: Reloads the firewall configuration.
 - --permanent: Makes changes permanent (requires a subsequent --reload).
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 
 firewall_cmd_add_service = CommandGenerator.CommandGenerator(
-action = 'opens ports for a service',
-correct_command = 'firewall-cmd --zone servers --add-service ssh --permanent',
-hint = 'Hint: Use "firewall-cmd --zone servers --add-service ssh --permanent" to open ports for a service',
-command_output = 
-[
-"""
+    action='opens ports for a service',
+    correct_command='firewall-cmd --zone servers --add-service ssh --permanent',
+    hint='Hint: Use "firewall-cmd --zone servers --add-service ssh --permanent" to open ports for a service',
+    command_output=[
+        """
 If the command is successful, it typically doesn't produce any output. However, if there are errors or warnings, they will be displayed in the terminal.
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  firewall-cmd: This is the command-line tool used to interact with the firewalld firewall management service on Linux systems.
  --zone servers: This option specifies the firewall zone to which the rule will be applied. In this case, it's specifying the "servers" zone.
  --add-service ssh: This option adds the SSH service to the specified zone's firewall rules. It allows incoming traffic on the SSH port (default is TCP port 22) through the firewall.
  --permanent: This option indicates that the change should be made permanently in the firewall configuration. It ensures that the rule persists even after a firewall reload or system reboot.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - --state: Displays the current state of the firewall.
 - --list-all: Lists all rules and zones currently configured.
 - --get-default-zone: Displays the default zone.
@@ -89,32 +83,29 @@ command_options =
 - --reload: Reloads the firewall configuration.
 - --permanent: Makes changes permanent (requires a subsequent --reload).
 """
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 firewall_cmd_add_port = CommandGenerator.CommandGenerator(
-action = 'add a individual port to the whitelist',
-correct_command = 'firewall-cmd --add-port 8080/tcp --permanent',
-hint = 'Hint: Use "firewall-cmd --add-port 8080/tcp --permanent" to add an individual port to the whitelist',
-command_output = 
-[
-"""
+    action='add a individual port to the whitelist',
+    correct_command='firewall-cmd --add-port 8080/tcp --permanent',
+    hint='Hint: Use "firewall-cmd --add-port 8080/tcp --permanent" to add an individual port to the whitelist',
+    command_output=[
+        """
 If the command is successful, it typically doesn't produce any output. However, if there are errors or warnings, they will be displayed in the terminal.
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  firewall-cmd: This is the command-line tool used to interact with the firewalld firewall management service on Linux systems.
  --add-port 8080/tcp: This option adds a rule to open TCP port 8080 in the firewall configuration. Specifically, it opens port 8080 for TCP traffic.
  --permanent: This option indicates that the change should be made permanently in the firewall configuration. It ensures that the rule persists even after a firewall reload or system reboot.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - --state: Displays the current state of the firewall.
 - --list-all: Lists all rules and zones currently configured.
 - --get-default-zone: Displays the default zone.
@@ -134,31 +125,28 @@ command_options =
 - --reload: Reloads the firewall configuration.
 - --permanent: Makes changes permanent (requires a subsequent --reload).
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )
 
 firewall_cmd_reload = CommandGenerator.CommandGenerator(
-action = 'reload the firewall configuration.',
-correct_command = 'firewall-cmd --reload',
-hint = 'Hint: Use "firewall-cmd --reload" to reload the firewall configuration',
-command_output = 
-[
-"""
+    action='reload the firewall configuration.',
+    correct_command='firewall-cmd --reload',
+    hint='Hint: Use "firewall-cmd --reload" to reload the firewall configuration',
+    command_output=[
+        """
 Success
 """,
-],
-command_aspects = 
-[
-"""
+    ],
+    command_aspects=[
+        """
  firewall-cmd: This is the command-line tool used to interact with the firewalld firewall management service on Linux systems.
  --reload: This option instructs firewalld to reload its configuration. When you execute this command, firewalld will re-read its configuration files and apply any changes that have been made since the last reload or restart.
 """,
-],
-command_options = 
-[
-"""
+    ],
+    command_options=[
+        """
 - --state: Displays the current state of the firewall.
 - --list-all: Lists all rules and zones currently configured.
 - --get-default-zone: Displays the default zone.
@@ -178,7 +166,7 @@ command_options =
 - --reload: Reloads the firewall configuration.
 - --permanent: Makes changes permanent (requires a subsequent --reload).
 """,
-],
-intro_text = ['',],
-outro_text = ['',],
+    ],
+    intro_text=['',],
+    outro_text=['',],
 )

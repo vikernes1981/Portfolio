@@ -4,13 +4,16 @@ import label_mount
 import ChallengeGenerator
 import CommandGenerator
 
+
 def mount_by_uuid():
     if partitions_filesystem.create_ext4_on_lvm.execute() and partitions_filesystem.check_uuid_command() and uuid_mount.edit_fstab() and uuid_mount.provide_uuid_line.execute() and uuid_mount.mount_partition.execute():
         return True
 
+
 def mount_by_label():
     if label_mount.check_e2label_command.execute() and label_mount.provide_label_line.execute():
         return True
+
 
 challenge_6 = ChallengeGenerator.ChallengeGenerator(
     quest_number=6,
