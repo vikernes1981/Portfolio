@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 module_list = CommandGenerator.CommandGenerator(
     action='list all the currently available modules',

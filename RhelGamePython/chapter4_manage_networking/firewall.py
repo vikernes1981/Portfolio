@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 
 ### Na ta spase se perissotera functions!? ###

@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 check_remove_logical_volume_command = CommandGenerator.CommandGenerator(
     action="remove logical volume",

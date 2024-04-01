@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 container_mkdir = CommandGenerator.CommandGenerator(
     action='create directory to be mounted by container',

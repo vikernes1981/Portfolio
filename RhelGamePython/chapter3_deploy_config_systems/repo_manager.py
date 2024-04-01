@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 utils_install = CommandGenerator.CommandGenerator(
     action='install yum-utils',

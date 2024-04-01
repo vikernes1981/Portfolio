@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 podman_inspect = CommandGenerator.CommandGenerator(
     action='inspect an already pulled container image',

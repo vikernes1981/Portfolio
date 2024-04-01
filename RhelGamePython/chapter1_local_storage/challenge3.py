@@ -1,6 +1,6 @@
 import volume_groups
 import ChallengeGenerator
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 challenge_3 = ChallengeGenerator.ChallengeGenerator(
     quest_number=3,

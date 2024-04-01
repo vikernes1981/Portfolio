@@ -2,7 +2,7 @@ import partitions_filesystem
 import uuid_mount
 import label_mount
 import ChallengeGenerator
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 
 def mount_by_uuid():

@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 grub2_list = CommandGenerator.CommandGenerator(
     action='list the environment options for modification for grub',

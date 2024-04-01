@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 search_dnf = CommandGenerator.CommandGenerator(
     action='search the package repositories accessible to your system for any packages related to nano',

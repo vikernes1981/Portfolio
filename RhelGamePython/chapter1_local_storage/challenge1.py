@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 import ChallengeGenerator
 import partitions_filesystem
 

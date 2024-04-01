@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 get_default = CommandGenerator.CommandGenerator(
     action='get default boot target',

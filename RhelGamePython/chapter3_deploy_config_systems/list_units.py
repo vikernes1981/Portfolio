@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 list_units = CommandGenerator.CommandGenerator(
     action='List all of the currently loaded targets units',

@@ -1,5 +1,5 @@
 import logical_volumes
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 import ChallengeGenerator
 
 challenge_2 = ChallengeGenerator.ChallengeGenerator(

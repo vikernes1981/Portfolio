@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 chrony_install = CommandGenerator.CommandGenerator(
     action='install Chrony NTP package',

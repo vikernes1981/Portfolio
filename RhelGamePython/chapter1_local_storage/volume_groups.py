@@ -1,4 +1,4 @@
-import CommandGenerator
+import chapter7_users_groups.CommandGenerator as CommandGenerator
 
 
 check_remove_physical_volume_command = CommandGenerator.CommandGenerator(
